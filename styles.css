@@ -322,11 +322,20 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .btn-ghost { background: rgba(255,255,255,0.06); color: var(--w100); border: 1px solid var(--card-border); }
 .btn-ghost:hover { background: rgba(255,255,255,0.12); }
 
-.home nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 24px; max-width: 1140px; margin: 0 auto; }
-.logo { font-family: var(--font-display); font-weight: 800; font-size: 26px; color: var(--lime); letter-spacing: -0.5px; text-decoration: none; }
+.home nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 24px; max-width: 1140px; margin: 0 auto; gap: 12px; }
+.logo { font-family: var(--font-display); font-weight: 800; font-size: 26px; color: var(--lime); letter-spacing: -0.5px; text-decoration: none; flex-shrink: 0; }
 .nav-actions { display: flex; align-items: center; gap: 22px; }
-.nav-link { color: var(--w85); text-decoration: none; font-size: 14.5px; font-weight: 600; }
+.nav-link { color: var(--w85); text-decoration: none; font-size: 14.5px; font-weight: 600; white-space: nowrap; }
 .nav-link:hover { color: #fff; }
+/* mobile nav: drop the section-anchor links, keep logo + sign in + book a demo */
+@media (max-width: 600px) {
+  .home nav { padding: 16px 18px; }
+  .nav-section { display: none; }
+  .nav-actions { gap: 14px; }
+  .logo { font-size: 22px; }
+  .nav-cta { padding: 10px 16px; font-size: 14px; }
+  .nav-link { font-size: 14px; }
+}
 
 /* ===== HERO ===== */
 .hero { position: relative; padding: 32px 0 76px; overflow: hidden;
