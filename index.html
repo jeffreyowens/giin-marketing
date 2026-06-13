@@ -23,7 +23,7 @@
     <a href="#how" class="nav-link nav-section">How it works</a>
     <a href="#play" class="nav-link nav-section">For venues</a>
     <a href="https://app.giin.ai/login" class="nav-link">Sign in</a>
-    <a href="https://calendly.com/hello-giin/30min" target="_blank" rel="noopener" class="btn btn-lime nav-cta js-book-demo">Book a demo</a>
+    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-lime nav-cta">Book a demo</a>
   </div>
 </nav>
 
@@ -35,7 +35,7 @@
       <h1>We make it fun for customers to bring you <span style="color:var(--purple)">reviews</span>, <span class="accent">repeat visits</span>, and <span style="color:#fff; text-decoration:underline; text-decoration-color:var(--lime); text-decoration-thickness:4px; text-underline-offset:5px">revenue</span>.</h1>
       <p class="hero-sub">Put a Giin QR code on the tables, assign tasks and enable games, then customers <span class="em-bold">promote your venue</span>, predict the matches from their phones, and earn real rewards they collect on their <span class="em-ul">next visit</span>. No app. No points card. No betting. Just repeat customers.</p>
       <div class="hero-cta">
-        <a href="https://calendly.com/hello-giin/30min" target="_blank" rel="noopener" class="btn btn-lime js-book-demo">Book a demo</a>
+        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-lime">Book a demo</a>
         <a href="https://app.giin.ai" class="btn btn-ghost">Try Giin</a>
       </div>
       <p class="hero-note">In-venue engagement for any venue, anywhere.</p>
@@ -299,7 +299,7 @@
       <p>A quick demo, and you could be live by the weekend.</p>
 
       <div class="hero-cta" style="justify-content:center;">
-        <a href="https://calendly.com/hello-giin/30min" target="_blank" rel="noopener" class="btn btn-lime js-book-demo">Book a demo</a>
+        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-lime">Book a demo</a>
         <a href="https://app.giin.ai" class="btn btn-ghost">Try Giin</a>
       </div>
     </div>
@@ -321,23 +321,7 @@
   </div>
 </footer>
 
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<script>
-(function () {
-  var CALENDLY_URL = 'https://calendly.com/hello-giin/30min?background_color=100420&text_color=ffffff&primary_color=c5ff4f';
-  var buttons = document.querySelectorAll('.js-book-demo');
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function (event) {
-      // Open the Calendly popup when the widget script has loaded. If it has
-      // not, let the link fall back to opening Calendly in a new tab.
-      if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
-        event.preventDefault();
-        window.Calendly.initPopupWidget({ url: CALENDLY_URL });
-      }
-    });
-  }
-})();
-</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
 </body>
 </html>
