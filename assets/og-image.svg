@@ -1,0 +1,58 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="gL" cx="12%" cy="-5%" r="55%">
+      <stop offset="0%" stop-color="#C5FF4F" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#C5FF4F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gR" cx="102%" cy="4%" r="62%">
+      <stop offset="0%" stop-color="#9628D2" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#9628D2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gB" cx="50%" cy="112%" r="55%">
+      <stop offset="0%" stop-color="#5A1E8C" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#5A1E8C" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="phoneScreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A0055"/>
+      <stop offset="100%" stop-color="#240038"/>
+    </linearGradient>
+    <radialGradient id="rewardGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#C5FF4F" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#C5FF4F" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="26"/></filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#1B0029"/>
+  <rect width="1200" height="630" fill="url(#gL)"/>
+  <rect width="1200" height="630" fill="url(#gR)"/>
+  <rect width="1200" height="630" fill="url(#gB)"/>
+
+  <text x="80" y="116" font-family="SyneXB, sans-serif" font-size="76" fill="#C5FF4F" letter-spacing="-2">Giin</text>
+  <text x="84" y="150" font-family="'JetBrains Mono', monospace" font-size="21" font-weight="700" letter-spacing="3.5" fill="#C5FF4F">IN-VENUE CUSTOMER ENGAGEMENT SYSTEM</text>
+
+  <text x="80" y="296" font-family="SoraXB, sans-serif" font-size="52" fill="#FFFFFF" letter-spacing="-1.5">We make it fun for</text>
+  <text x="80" y="362" font-family="SoraXB, sans-serif" font-size="52" fill="#FFFFFF" letter-spacing="-1.5">customers to bring you</text>
+  <text x="80" y="428" font-family="SoraXB, sans-serif" font-size="52" fill="#C79BFF" letter-spacing="-1.5">reviews<tspan fill="#FFFFFF">, </tspan><tspan fill="#C5FF4F">repeat visits</tspan><tspan fill="#FFFFFF">,</tspan></text>
+  <text x="80" y="494" font-family="SoraXB, sans-serif" font-size="52" fill="#FFFFFF" letter-spacing="-1.5">and <tspan fill="#C5FF4F">revenue</tspan>.</text>
+  <rect x="158" y="506" width="196" height="6" rx="3" fill="#C5FF4F"/>
+
+  <text x="80" y="556" font-family="'Outfit', sans-serif" font-size="24" font-weight="500" fill="rgba(255,255,255,0.80)">A QR on your tables. No app. No points card. Just repeat customers.</text>
+
+  <g transform="translate(852, 92)">
+    <ellipse cx="174" cy="230" rx="180" ry="210" fill="url(#rewardGlow)" filter="url(#blur1)"/>
+    <rect x="40" y="0" width="268" height="470" rx="42" fill="#0A0012" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+    <rect x="54" y="14" width="240" height="442" rx="30" fill="url(#phoneScreen)"/>
+    <rect x="139" y="14" width="70" height="20" rx="10" fill="#0A0012"/>
+    <text x="174" y="80" text-anchor="middle" font-family="SyneXB, sans-serif" font-size="22" fill="#C5FF4F">Giin</text>
+    <circle cx="174" cy="192" r="52" fill="#C5FF4F"/>
+    <path d="M150 192 l16 16 l30 -34" fill="none" stroke="#102000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="174" y="302" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="40" fill="#FFFFFF" letter-spacing="1">REWARD EARNED</text>
+    <text x="174" y="340" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="17" font-weight="600" fill="rgba(255,255,255,0.82)">Collect it on your</text>
+    <text x="174" y="362" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="17" font-weight="700" fill="#C5FF4F">next visit</text>
+    <rect x="84" y="396" width="180" height="44" rx="12" fill="#C5FF4F"/>
+    <text x="174" y="424" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="17" font-weight="800" fill="#102000">See your reward</text>
+  </g>
+
+  <rect x="0" y="624" width="1200" height="6" fill="#C5FF4F"/>
+</svg>
