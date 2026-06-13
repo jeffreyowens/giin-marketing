@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body class="home">
 
@@ -22,7 +23,7 @@
     <a href="#how" class="nav-link nav-section">How it works</a>
     <a href="#play" class="nav-link nav-section">For venues</a>
     <a href="https://app.giin.ai/login" class="nav-link">Sign in</a>
-    <a href="#demo" class="btn btn-lime nav-cta">Book a demo</a>
+    <a href="https://calendly.com/hello-giin/30min" target="_blank" rel="noopener" class="btn btn-lime nav-cta js-book-demo">Book a demo</a>
   </div>
 </nav>
 
@@ -34,7 +35,7 @@
       <h1>We make it fun for customers to bring you <span style="color:var(--purple)">reviews</span>, <span class="accent">repeat visits</span>, and <span style="color:#fff; text-decoration:underline; text-decoration-color:var(--lime); text-decoration-thickness:4px; text-underline-offset:5px">revenue</span>.</h1>
       <p class="hero-sub">Put a Giin QR code on the tables, assign tasks and enable games, then customers <span class="em-bold">promote your venue</span>, predict the matches from their phones, and earn real rewards they collect on their <span class="em-ul">next visit</span>. No app. No points card. No betting. Just repeat customers.</p>
       <div class="hero-cta">
-        <a href="#demo" class="btn btn-lime">Book a demo</a>
+        <a href="https://calendly.com/hello-giin/30min" target="_blank" rel="noopener" class="btn btn-lime js-book-demo">Book a demo</a>
         <a href="https://app.giin.ai" class="btn btn-ghost">Try Giin</a>
       </div>
       <p class="hero-note">In-venue engagement for any venue, anywhere.</p>
@@ -297,60 +298,9 @@
       <h2>See it in action.</h2>
       <p>A quick demo, and you could be live by the weekend.</p>
 
-      <form id="demo-form" class="demo-form" novalidate>
-        <div class="demo-row">
-          <div class="demo-field">
-            <label class="demo-label" for="fullName">Full name</label>
-            <input class="demo-input" id="fullName" name="fullName" type="text" autocomplete="name" required>
-          </div>
-          <div class="demo-field">
-            <label class="demo-label" for="email">Email address</label>
-            <input class="demo-input" id="email" name="email" type="email" autocomplete="email" required>
-          </div>
-        </div>
-        <div class="demo-row">
-          <div class="demo-field">
-            <label class="demo-label" for="timezone">Timezone</label>
-            <input class="demo-input" id="timezone" name="timezone" type="text" placeholder="e.g. Asia/Bangkok" required>
-          </div>
-          <div class="demo-field">
-            <label class="demo-label" for="title">Title</label>
-            <input class="demo-input" id="title" name="title" type="text" placeholder="e.g. Owner, Manager" required>
-          </div>
-        </div>
-        <div class="demo-row">
-          <div class="demo-field">
-            <label class="demo-label" for="venueName">Venue name</label>
-            <input class="demo-input" id="venueName" name="venueName" type="text" required>
-          </div>
-          <div class="demo-field">
-            <label class="demo-label" for="venueType">Type of venue</label>
-            <input class="demo-input" id="venueType" name="venueType" type="text" placeholder="e.g. Bar, Restaurant, Beauty clinic" required>
-          </div>
-        </div>
-        <div class="demo-row">
-          <div class="demo-field">
-            <label class="demo-label" for="country">Country of venue</label>
-            <input class="demo-input" id="country" name="country" type="text" required>
-          </div>
-          <div class="demo-field">
-            <label class="demo-label" for="city">City of venue</label>
-            <input class="demo-input" id="city" name="city" type="text" required>
-          </div>
-        </div>
-
-        <!-- honeypot: bots fill this, real people never see it -->
-        <div class="demo-hp" aria-hidden="true">
-          <label for="company_website">Company website</label>
-          <input id="company_website" name="company_website" type="text" tabindex="-1" autocomplete="off">
-        </div>
-
-        <button type="submit" class="btn btn-lime demo-submit" id="demo-submit">Book a demo</button>
-        <p class="demo-error" id="demo-error" hidden></p>
-      </form>
-
-      <div class="demo-success" id="demo-success" hidden>
-        <p>Thanks. We will be in touch shortly to set up your demo.</p>
+      <div class="hero-cta" style="justify-content:center;">
+        <a href="https://calendly.com/hello-giin/30min" target="_blank" rel="noopener" class="btn btn-lime js-book-demo">Book a demo</a>
+        <a href="https://app.giin.ai" class="btn btn-ghost">Try Giin</a>
       </div>
     </div>
   </div>
@@ -371,85 +321,21 @@
   </div>
 </footer>
 
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script>
 (function () {
-  var form = document.getElementById('demo-form');
-  if (!form) return;
-  var submitBtn = document.getElementById('demo-submit');
-  var errorEl = document.getElementById('demo-error');
-  var successEl = document.getElementById('demo-success');
-  var fields = ['fullName', 'email', 'timezone', 'title', 'venueName', 'venueType', 'country', 'city'];
-  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  // Prefill the timezone for convenience. The visitor can still edit it.
-  try {
-    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    var tzInput = form.elements.timezone;
-    if (tz && tzInput && !tzInput.value) tzInput.value = tz;
-  } catch (e) {}
-
-  function showError(message) {
-    errorEl.textContent = message;
-    errorEl.hidden = false;
-  }
-
-  function clearError() {
-    errorEl.textContent = '';
-    errorEl.hidden = true;
-  }
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    clearError();
-
-    var data = {};
-    for (var i = 0; i < fields.length; i++) {
-      var el = form.elements[fields[i]];
-      data[fields[i]] = el ? el.value.trim() : '';
-    }
-    var hp = form.elements.company_website;
-    data.company_website = hp ? hp.value : '';
-
-    for (var j = 0; j < fields.length; j++) {
-      if (!data[fields[j]]) {
-        showError('Please fill in every field.');
-        return;
+  var CALENDLY_URL = 'https://calendly.com/hello-giin/30min?background_color=100420&text_color=ffffff&primary_color=c5ff4f';
+  var buttons = document.querySelectorAll('.js-book-demo');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function (event) {
+      // Open the Calendly popup when the widget script has loaded. If it has
+      // not, let the link fall back to opening Calendly in a new tab.
+      if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+        event.preventDefault();
+        window.Calendly.initPopupWidget({ url: CALENDLY_URL });
       }
-    }
-    if (!emailRe.test(data.email)) {
-      showError('Please enter a valid email address.');
-      return;
-    }
-
-    var originalLabel = submitBtn.textContent;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-
-    fetch('/api/demo', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    }).then(function (res) {
-      return res.json().catch(function () { return {}; }).then(function (body) {
-        return { ok: res.ok, body: body };
-      });
-    }).then(function (result) {
-      if (result.ok) {
-        form.hidden = true;
-        successEl.hidden = false;
-        successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        var message = (result.body && result.body.error) ? result.body.error : 'Something went wrong. Please try again.';
-        showError(message);
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalLabel;
-      }
-    }).catch(function () {
-      showError('Network error. Please try again.');
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalLabel;
     });
-  });
+  }
 })();
 </script>
 
