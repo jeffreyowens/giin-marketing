@@ -1,0 +1,5 @@
+# Cloudflare Pages headers.
+# Force browsers to revalidate the stylesheet on every load so design
+# updates are never stuck behind a stale browser cache.
+/styles.css
+  Cache-Control: no-cache
