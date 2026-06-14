@@ -356,6 +356,7 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .loop-panel { display: flex; flex-direction: column; }
 .loop-lead { font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--purple); margin-bottom: 18px; text-align: center; }
 .loop-lead .b { color: var(--lime); }
+.loop-foot { margin-top: 18px; font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; text-align: center; }
 .loop-box { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: rgba(0,0,0,0.3); border: 1px solid var(--lime-border); border-radius: 22px; padding: 22px; overflow: hidden; }
 .loop-box::before { content:''; position:absolute; top:-30px; right:-30px; width:120px; height:120px; border-radius:50%; background:rgba(197,255,79,0.14); filter:blur(40px); }
 .loop-box::after { content:''; position:absolute; bottom:-30px; left:-30px; width:110px; height:110px; border-radius:50%; background:rgba(155,100,220,0.26); filter:blur(40px); }
