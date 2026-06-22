@@ -369,6 +369,16 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .cnode .cn-em svg { width: 28px; height: 28px; stroke: var(--lime); stroke-width: 1.75; }
 .cnode .cn-h { font-family: var(--font-head); font-weight: 700; font-size: 16px; color: #fff; }
 .cnode .cn-p { font-family: var(--font-body); font-size: 12.5px; color: var(--w85); line-height: 1.35; }
+@media (max-width: 600px) {
+  .cnode { padding: 8px 10px; }
+  .cnode .cn-top { gap: 6px; margin-bottom: 4px; }
+  .cnode .cn-em { width: 26px; height: 26px; }
+  .cnode .cn-em svg { width: 20px; height: 20px; stroke-width: 2; }
+  .cnode .cn-h { font-size: 12px; }
+  .cnode .cn-p { font-size: 9.5px; line-height: 1.25; }
+  .cycle-lead { font-size: 16px; margin-bottom: 12px; }
+  .cycle-foot { font-size: 9.5px; margin-top: 12px; }
+}
 
 /* PHONE - flow layout, cannot overlap */
 .phone-stage { display: flex; justify-content: center; position: relative; }
