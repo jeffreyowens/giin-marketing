@@ -28,23 +28,22 @@
   <rect width="1200" height="630" fill="url(#gR)"/>
   <rect width="1200" height="630" fill="url(#gB)"/>
 
-  <text x="80" y="116" font-family="SyneXB, sans-serif" font-size="76" fill="#C5FF4F" letter-spacing="-2">Giin</text>
-  <text x="84" y="150" font-family="'JetBrains Mono', monospace" font-size="21" font-weight="700" letter-spacing="3.5" fill="#C5FF4F">IN-VENUE CUSTOMER ENGAGEMENT SYSTEM</text>
+  <text x="80" y="116" font-family="Syne, sans-serif" font-weight="800" font-size="76" fill="#C5FF4F" letter-spacing="-2">Giin</text>
 
-  <text x="80" y="296" font-family="SoraXB, sans-serif" font-size="52" fill="#FFFFFF" letter-spacing="-1.5">We make it fun for</text>
-  <text x="80" y="362" font-family="SoraXB, sans-serif" font-size="52" fill="#FFFFFF" letter-spacing="-1.5">customers to bring you</text>
-  <text x="80" y="428" font-family="SoraXB, sans-serif" font-size="52" fill="#C79BFF" letter-spacing="-1.5">reviews<tspan fill="#FFFFFF">, </tspan><tspan fill="#C5FF4F">repeat visits</tspan><tspan fill="#FFFFFF">,</tspan></text>
-  <text x="80" y="494" font-family="SoraXB, sans-serif" font-size="52" fill="#FFFFFF" letter-spacing="-1.5">and <tspan fill="#C5FF4F">revenue</tspan>.</text>
-  <rect x="158" y="506" width="196" height="6" rx="3" fill="#C5FF4F"/>
+  <text x="80" y="232" font-family="Sora, sans-serif" font-weight="800" font-size="52" fill="#FFFFFF" letter-spacing="-1.5">Get more <tspan fill="#C5FF4F">revenue,</tspan></text>
+  <text x="80" y="298" font-family="Sora, sans-serif" font-weight="800" font-size="52" fill="#C5FF4F" letter-spacing="-1.5">return visits, and</text>
+  <text x="80" y="364" font-family="Sora, sans-serif" font-weight="800" font-size="52" letter-spacing="-1.5" xml:space="preserve"><tspan fill="#C5FF4F">value</tspan><tspan fill="#FFFFFF" dx="14">from every</tspan></text>
+  <text x="80" y="430" font-family="Sora, sans-serif" font-weight="800" font-size="52" fill="#FFFFFF" letter-spacing="-1.5">customer.</text>
 
-  <text x="80" y="556" font-family="'Outfit', sans-serif" font-size="24" font-weight="500" fill="rgba(255,255,255,0.80)">A QR on your tables. No app. No points card. Just repeat customers.</text>
+  <text x="80" y="510" font-family="'Outfit', sans-serif" font-size="24" font-weight="500" fill="rgba(255,255,255,0.80)">No app to download. No points card to remember.</text>
+  <text x="80" y="544" font-family="'Outfit', sans-serif" font-size="24" font-weight="500" fill="rgba(255,255,255,0.80)">Just more customers, and more value per customer.</text>
 
   <g transform="translate(852, 92)">
     <ellipse cx="174" cy="230" rx="180" ry="210" fill="url(#rewardGlow)" filter="url(#blur1)"/>
     <rect x="40" y="0" width="268" height="470" rx="42" fill="#0A0012" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
     <rect x="54" y="14" width="240" height="442" rx="30" fill="url(#phoneScreen)"/>
     <rect x="139" y="14" width="70" height="20" rx="10" fill="#0A0012"/>
-    <text x="174" y="80" text-anchor="middle" font-family="SyneXB, sans-serif" font-size="22" fill="#C5FF4F">Giin</text>
+    <text x="174" y="80" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="22" fill="#C5FF4F">Giin</text>
     <circle cx="174" cy="192" r="52" fill="#C5FF4F"/>
     <path d="M150 192 l16 16 l30 -34" fill="none" stroke="#102000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
     <text x="174" y="302" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="40" fill="#FFFFFF" letter-spacing="1">REWARD EARNED</text>
