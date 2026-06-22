@@ -57,7 +57,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="styles.css?v=12">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body class="home">
@@ -85,38 +85,91 @@
       </div>
     </div>
 
-    <!-- 3-NODE CYCLE: Engage -> Earn -> Return -> (loops) -->
-    <div class="cycle-panel">
-      <div class="cycle-lead">Engage, earn, return.</div>
-      <div class="cycle-box">
-        <svg class="cycle-svg" viewBox="0 0 400 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <defs>
-            <marker id="cyc-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-              <path d="M0,0 L10,5 L0,10 z" fill="#C5FF4F"/>
-            </marker>
-          </defs>
-          <!-- Engage -> Earn : straight diagonal -->
-          <line x1="238" y1="155" x2="263" y2="195" stroke="#C5FF4F" stroke-width="2.5" stroke-linecap="round" marker-end="url(#cyc-arrow)"/>
-          <!-- Earn -> Return : straight horizontal across the bottom -->
-          <line x1="218" y1="253" x2="182" y2="253" stroke="#C5FF4F" stroke-width="2.5" stroke-linecap="round" marker-end="url(#cyc-arrow)"/>
-          <!-- Return -> Engage : straight diagonal -->
-          <line x1="137" y1="195" x2="162" y2="155" stroke="#C5FF4F" stroke-width="2.5" stroke-linecap="round" marker-end="url(#cyc-arrow)"/>
-        </svg>
-        <div class="cnode cn-top-pos">
-          <div class="cn-top"><div class="cn-em"><i data-lucide="circle-check"></i></div><div class="cn-h">Engage</div></div>
-          <div class="cn-p">Customers complete a task you set, right from their phone.</div>
+<!-- ENGAGE / EARN / RETURN animated money-making loop (hero right column) -->
+<div class="loop-panel">
+  <h2 class="loop-h">A proven money-making loop.</h2>
+  <div class="loop-card">
+    <div class="loop-stage">
+      <svg class="loop-svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <filter id="gl-glow" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="9" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="gl-ringglow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="3" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <path id="gl-path" d="M 300 100 A 200 200 0 1 1 300 500 A 200 200 0 1 1 300 100" fill="none"/>
+          <linearGradient id="gl-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#EAFFB0"/>
+            <stop offset="0.45" stop-color="#C5FF4F"/>
+            <stop offset="1" stop-color="#74B636"/>
+          </linearGradient>
+        </defs>
+        <g transform="translate(0 50)">
+          <circle cx="300" cy="300" r="200" fill="none" stroke="rgba(197,255,79,0.07)" stroke-width="11" filter="url(#gl-ringglow)"/>
+          <circle class="loop-radar" cx="300" cy="300" r="200"/>
+          <circle class="loop-radar" cx="300" cy="300" r="200" style="animation-delay:-2.25s"/>
+          <g class="loop-ringpulse" filter="url(#gl-ringglow)">
+            <circle class="loop-ring" cx="300" cy="300" r="200"/>
+          </g>
+          <g class="loop-chev">
+            <path d="M-9 -7 L7 0 L-9 7 Z" transform="translate(473 200) rotate(60)"/>
+            <path d="M-9 -7 L7 0 L-9 7 Z" transform="translate(300 500) rotate(180)"/>
+            <path d="M-9 -7 L7 0 L-9 7 Z" transform="translate(127 200) rotate(300)"/>
+          </g>
+          <circle class="loop-tail" r="9" fill="rgba(197,255,79,0.30)">
+            <animateMotion dur="9s" repeatCount="indefinite" begin="0.27s"><mpath href="#gl-path"/></animateMotion>
+          </circle>
+          <circle class="loop-tail" r="7" fill="rgba(197,255,79,0.45)">
+            <animateMotion dur="9s" repeatCount="indefinite" begin="0.15s"><mpath href="#gl-path"/></animateMotion>
+          </circle>
+          <g filter="url(#gl-glow)">
+            <circle r="22" fill="rgba(197,255,79,0.22)">
+              <animateMotion dur="9s" repeatCount="indefinite"><mpath href="#gl-path"/></animateMotion>
+            </circle>
+            <circle r="10" fill="#C5FF4F">
+              <animate attributeName="r" values="9;13;9" dur="2.4s" repeatCount="indefinite"/>
+              <animateMotion dur="9s" repeatCount="indefinite"><mpath href="#gl-path"/></animateMotion>
+            </circle>
+          </g>
+        </g>
+      </svg>
+
+      <div class="loop-node loop-node-engage">
+        <div class="loop-node-hd">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.3 2.3 4.7-5"/></svg>
+          <span>Engage</span>
         </div>
-        <div class="cnode cn-right-pos">
-          <div class="cn-top"><div class="cn-em"><i data-lucide="gift"></i></div><div class="cn-h">Earn</div></div>
-          <div class="cn-p">Staff confirms in one tap, and the reward lands in the customer's Giin profile.</div>
-        </div>
-        <div class="cnode cn-left-pos">
-          <div class="cn-top"><div class="cn-em"><i data-lucide="rotate-ccw"></i></div><div class="cn-h">Return</div></div>
-          <div class="cn-p">They come back to redeem, giving your venue a visit you might not have had otherwise.</div>
-        </div>
+        <p>Customers complete a task you set, right from their phone.</p>
       </div>
-      <p class="cycle-foot">One QR code. Set up in an afternoon.</p>
+      <div class="loop-node loop-node-earn">
+        <div class="loop-node-hd">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"/><path d="M3 12h18M12 8v13M12 8s-1.5-4-4-4-2.5 4 0 4M12 8s1.5-4 4-4 2.5 4 0 4"/></svg>
+          <span>Earn</span>
+        </div>
+        <p>Staff confirms in one tap, and the reward lands in the customer's Giin profile.</p>
+      </div>
+      <div class="loop-node loop-node-return">
+        <div class="loop-node-hd">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 109-9 9 9 0 00-7.5 4M3 4v4h4"/></svg>
+          <span>Return</span>
+        </div>
+        <p>They come back to redeem, giving your venue a visit you might not have had otherwise.</p>
+      </div>
     </div>
+  </div>
+  <div class="loop-eyebrow">One QR. Setup in an afternoon.</div>
+  <div class="loop-src">Real results. Every month.</div>
+  <div class="loop-stats">
+    <div class="loop-stat"><div class="loop-num">650+</div><div class="loop-lbl">Monthly customer contacts</div></div>
+    <div class="loop-stat"><div class="loop-num">580+</div><div class="loop-lbl">Monthly tasks completed</div></div>
+    <div class="loop-stat"><div class="loop-num">80+</div><div class="loop-lbl">Repeat customers brought back a month</div></div>
+    <div class="loop-stat"><div class="loop-num">18+</div><div class="loop-lbl">Incremental reviews added daily</div></div>
+  </div>
+  <div class="loop-fine">Live results from Seenspace, Bangkok. Monthly figures projected from daily averages.</div>
+</div>
   </div>
 </header>
 
@@ -255,35 +308,6 @@
       <span class="chip">&#129496; Boutique fitness</span>
       <span class="chip">&#9986; Barber shops</span>
     </div>
-  </div>
-</section>
-
-<!-- CASE STUDY: SEENSPACE (placeholder, untouched) -->
-<section class="proof">
-  <div class="wrap">
-    <div class="proof-head">
-      <div class="proof-venue">&#128205; Live at Seenspace Bangkok</div>
-      <h2 class="sec-title">Real results, one venue, every month.</h2>
-    </div>
-    <div class="proof-grid">
-      <div class="proof-card">
-        <div class="proof-num">700+</div>
-        <div class="proof-label">Monthly customer contacts</div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-num">245+</div>
-        <div class="proof-label">Monthly tasks completed</div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-num">18+</div>
-        <div class="proof-label">Incremental reviews added daily</div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-num">15+</div>
-        <div class="proof-label">Deferred rewards claimed by high-spend customers on off-peak days</div>
-      </div>
-    </div>
-    <p class="proof-foot">Measured during the live World Cup 2026 pilot at Seenspace Bangkok.</p>
   </div>
 </section>
 

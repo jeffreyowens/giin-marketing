@@ -352,33 +352,41 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .demo-sec { background: linear-gradient(180deg, var(--bg), var(--bg-purple)); }
 .demo-sec .phone-stage { margin-top: 8px; }
 
-/* HERO 3-NODE CYCLE: Engage -> Earn -> Return -> (loops) */
-.cycle-panel { display: flex; flex-direction: column; }
-.cycle-lead { font-family: var(--font-head); font-weight: 700; font-size: 18px; letter-spacing: 0.3px; color: var(--lime); margin-bottom: 16px; text-align: center; }
-.cycle-foot { margin-top: 18px; font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; text-align: center; }
-.cycle-box { position: relative; background: rgba(0,0,0,0.3); border: 1px solid var(--lime-border); border-radius: 22px; overflow: hidden; aspect-ratio: 400 / 360; }
-.cycle-box::before { content:''; position:absolute; top:-30px; right:-30px; width:120px; height:120px; border-radius:50%; background:rgba(197,255,79,0.14); filter:blur(40px); z-index: 0; }
-.cycle-box::after { content:''; position:absolute; bottom:-30px; left:-30px; width:110px; height:110px; border-radius:50%; background:rgba(155,100,220,0.26); filter:blur(40px); z-index: 0; }
-.cycle-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
-.cnode { position: absolute; box-sizing: border-box; width: 38%; height: 30%; background: rgba(0,0,0,0.55); border: 1px solid var(--card-border); border-radius: 16px; padding: 12px 14px; z-index: 2; }
-.cnode.cn-top-pos { top: 26.9%; left: 50%; transform: translate(-50%, -50%); }
-.cnode.cn-left-pos { top: 70.3%; left: 25%; transform: translate(-50%, -50%); }
-.cnode.cn-right-pos { top: 70.3%; left: 75%; transform: translate(-50%, -50%); }
-.cnode .cn-top { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-.cnode .cn-em { width: 36px; height: 36px; display:flex; align-items:center; justify-content:center; flex-shrink: 0; color: var(--lime); }
-.cnode .cn-em svg { width: 28px; height: 28px; stroke: var(--lime); stroke-width: 1.75; }
-.cnode .cn-h { font-family: var(--font-head); font-weight: 700; font-size: 16px; color: #fff; }
-.cnode .cn-p { font-family: var(--font-body); font-size: 12.5px; color: var(--w85); line-height: 1.35; }
-@media (max-width: 600px) {
-  .cnode { padding: 8px 10px; }
-  .cnode .cn-top { gap: 6px; margin-bottom: 4px; }
-  .cnode .cn-em { width: 26px; height: 26px; }
-  .cnode .cn-em svg { width: 20px; height: 20px; stroke-width: 2; }
-  .cnode .cn-h { font-size: 12px; }
-  .cnode .cn-p { font-size: 9.5px; line-height: 1.25; }
-  .cycle-lead { font-size: 16px; margin-bottom: 12px; }
-  .cycle-foot { font-size: 9.5px; margin-top: 12px; }
+/* ENGAGE / EARN / RETURN animated money-making loop */
+.loop-panel{max-width:440px;margin-inline:auto;width:100%;}
+.loop-h{display:none;font-family:var(--font-head);font-weight:700;font-size:26px;line-height:1.15;color:var(--lime);text-align:center;letter-spacing:-0.01em;margin-bottom:26px;}
+.loop-card{position:relative;aspect-ratio:1/1;width:100%;max-width:400px;margin-inline:auto;border-radius:28px;background:rgba(6,2,18,0.92);border:1.5px solid rgba(197,255,79,0.32);box-shadow:0 0 0 1px rgba(197,255,79,0.1), 0 24px 60px rgba(0,0,0,0.55), 0 0 70px rgba(197,255,79,0.13);overflow:hidden;}
+.loop-stage{position:absolute;inset:0;}
+.loop-svg{position:absolute;inset:0;width:100%;height:100%;}
+.loop-node{position:absolute;transform:translate(-50%,-50%);width:39%;max-width:172px;height:142px;display:flex;flex-direction:column;justify-content:center;background:#0A0414;border:1.5px solid rgba(255,255,255,0.14);border-radius:18px;padding:15px;overflow:hidden;z-index:3;animation:loop-nodeglow 9s ease-in-out infinite;}
+.loop-node-engage{left:50%;top:25%;animation-delay:-0.9s;}
+.loop-node-earn{left:78.5%;top:75%;animation-delay:-6.9s;}
+.loop-node-return{left:21.5%;top:75%;animation-delay:-3.9s;}
+.loop-node-hd{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.loop-node-hd svg{width:20px;height:20px;flex-shrink:0;stroke:var(--lime);}
+.loop-node-hd span{font-family:var(--font-head);font-weight:700;font-size:16px;color:#fff;}
+.loop-node p{font-family:var(--font-body);font-size:12px;line-height:1.32;color:rgba(255,255,255,0.82);}
+@keyframes loop-nodeglow{
+  0%{box-shadow:0 0 0 0 rgba(197,255,79,0);border-color:rgba(255,255,255,0.14);}
+  2%{box-shadow:0 0 16px 0 rgba(197,255,79,0.26);border-color:rgba(197,255,79,0.55);}
+  18%{box-shadow:0 0 16px 0 rgba(197,255,79,0.26);border-color:rgba(197,255,79,0.55);}
+  20%{box-shadow:0 0 0 0 rgba(197,255,79,0);border-color:rgba(255,255,255,0.14);}
+  100%{box-shadow:0 0 0 0 rgba(197,255,79,0);border-color:rgba(255,255,255,0.14);}
 }
+.loop-ring{stroke:url(#gl-grad);stroke-width:4;fill:none;opacity:0.92;}
+.loop-ringpulse{animation:loop-ringpulse 4.5s ease-in-out infinite;}
+@keyframes loop-ringpulse{0%,100%{opacity:0.78;}50%{opacity:1;}}
+.loop-radar{stroke:rgba(197,255,79,0.6);stroke-width:1.5;fill:none;transform-origin:50% 50%;animation:loop-ping 4.5s ease-out infinite;}
+@keyframes loop-ping{0%{transform:scale(0.18);opacity:0.7;}80%{opacity:0;}100%{transform:scale(1.04);opacity:0;}}
+.loop-chev{fill:rgba(197,255,79,0.55);}
+.loop-eyebrow{font-family:var(--font-mono);font-size:12.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;text-align:center;margin-top:26px;line-height:1.45;}
+.loop-src{font-family:var(--font-mono);font-size:10.5px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:rgba(197,255,79,0.75);text-align:center;margin-top:5px;}
+.loop-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px 10px;margin-top:18px;}
+.loop-stat{text-align:center;padding:0 4px;}
+.loop-num{font-family:var(--font-reward);font-size:44px;line-height:0.9;color:var(--lime);letter-spacing:0.01em;}
+.loop-lbl{font-family:var(--font-body);font-size:12px;line-height:1.3;color:rgba(255,255,255,0.72);margin-top:5px;}
+.loop-fine{font-family:var(--font-body);font-size:10.5px;color:rgba(255,255,255,0.4);text-align:center;margin-top:16px;}
+@media(max-width:900px){ .loop-h{display:block;} }
 
 /* PHONE - flow layout, cannot overlap */
 .phone-stage { display: flex; justify-content: center; position: relative; }
