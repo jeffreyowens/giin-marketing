@@ -438,19 +438,15 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .pdots { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 8; }
 .pdots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.25); }
 
-/* scene + step timing: 6 scenes over 18s, step text changes with scene */
-@keyframes sc1 { 0%,1%{opacity:0} 3%,15%{opacity:1} 17%,100%{opacity:0} }
-@keyframes sc2 { 0%,17%{opacity:0} 19%,31%{opacity:1} 33%,100%{opacity:0} }
-@keyframes sc3 { 0%,33%{opacity:0} 35%,47%{opacity:1} 49%,100%{opacity:0} }
-@keyframes sc4 { 0%,49%{opacity:0} 51%,63%{opacity:1} 65%,100%{opacity:0} }
-@keyframes sc5 { 0%,65%{opacity:0} 67%,81%{opacity:1} 83%,100%{opacity:0} }
-@keyframes sc6 { 0%,83%{opacity:0} 85%,97%{opacity:1} 99%,100%{opacity:0} }
-.s1{animation:sc1 18s infinite}.s2{animation:sc2 18s infinite}.s3{animation:sc3 18s infinite}
-.s4{animation:sc4 18s infinite}.s5{animation:sc5 18s infinite}.s6{animation:sc6 18s infinite}
+/* scene + step timing: 4 scenes over 12s, step text changes with scene */
+@keyframes sc1 { 0%,1%{opacity:0} 3%,23%{opacity:1} 25%,100%{opacity:0} }
+@keyframes sc2 { 0%,25%{opacity:0} 27%,48%{opacity:1} 50%,100%{opacity:0} }
+@keyframes sc3 { 0%,50%{opacity:0} 52%,73%{opacity:1} 75%,100%{opacity:0} }
+@keyframes sc4 { 0%,75%{opacity:0} 77%,98%{opacity:1} 100%{opacity:0} }
+.s1{animation:sc1 12s infinite}.s2{animation:sc2 12s infinite}.s3{animation:sc3 12s infinite}.s4{animation:sc4 12s infinite}
 /* step labels fade in sync */
 .st { position: absolute; left: 50%; transform: translateX(-50%); opacity: 0; white-space: nowrap; }
-.st1{animation:sc1 18s infinite}.st2{animation:sc2 18s infinite}.st3{animation:sc3 18s infinite}
-.st4{animation:sc4 18s infinite}.st5{animation:sc5 18s infinite}.st6{animation:sc6 18s infinite}
+.st1{animation:sc1 12s infinite}.st2{animation:sc2 12s infinite}.st3{animation:sc3 12s infinite}.st4{animation:sc4 12s infinite}
 @media (prefers-reduced-motion: reduce){ .scene,.st{animation:none!important} .s2,.st2{opacity:1} .scan-laser{animation:none} }
 
 /* ===== SECTIONS ===== */
@@ -508,6 +504,34 @@ section { padding: 86px 0; }
 .win-em { font-size: 36px; margin-bottom: 14px; }
 .win-h { font-family: var(--font-head); font-weight: 700; font-size: 20px; color: #fff; margin-bottom: 10px; }
 .win-p { color: var(--w85); font-size: 15.5px; line-height: 1.5; }
+
+/* WHAT YOU GET - 1 flagship + 2x2 grid */
+.benefits { background: var(--bg); }
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: stretch; }
+.benefits-sub { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 22px; }
+.benefit-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 22px; padding: 28px 26px; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+.benefit-card::before { content:''; position:absolute; top:-30px; right:-30px; width:110px; height:110px; border-radius:50%; background: rgba(197,255,79,0.10); filter: blur(40px); }
+.benefit-card > * { position: relative; }
+.benefit-em { color: var(--lime); margin-bottom: 16px; display: flex; align-items: center; height: 36px; }
+.benefit-em svg { width: 32px; height: 32px; stroke: var(--lime); stroke-width: 1.75; }
+.benefit-h { font-family: var(--font-head); font-weight: 700; font-size: 19px; color: #fff; margin-bottom: 8px; line-height: 1.2; }
+.benefit-p { color: var(--w70); font-size: 14.5px; line-height: 1.5; margin: 0; }
+.benefit-lead { padding: 40px 36px; background: linear-gradient(160deg, rgba(197,255,79,0.10), rgba(255,255,255,0.04) 55%); border: 1px solid var(--lime-border); justify-content: center; }
+.benefit-lead::before { width: 180px; height: 180px; background: rgba(197,255,79,0.18); top: -50px; right: -50px; }
+.benefit-lead::after { content:''; position:absolute; bottom:-40px; left:-40px; width:140px; height:140px; border-radius:50%; background: rgba(155,100,220,0.28); filter: blur(44px); }
+.benefit-lead .benefit-em { height: 52px; margin-bottom: 24px; }
+.benefit-lead .benefit-em svg { width: 48px; height: 48px; stroke-width: 1.75; }
+.benefit-lead .benefit-h { font-family: var(--font-head); font-weight: 800; font-size: 30px; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.1; }
+.benefit-lead .benefit-p { font-size: 16.5px; color: var(--w85); line-height: 1.5; }
+@media (max-width: 900px) {
+  .benefits-grid { grid-template-columns: 1fr; }
+  .benefits-sub { grid-template-columns: 1fr 1fr; }
+  .benefit-lead { padding: 32px 28px; }
+  .benefit-lead .benefit-h { font-size: 26px; }
+}
+@media (max-width: 600px) {
+  .benefits-sub { grid-template-columns: 1fr; }
+}
 
 /* BUILT FOR YOUR VENUE - chip list */
 .venues { background: var(--bg); }
