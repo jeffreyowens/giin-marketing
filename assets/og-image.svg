@@ -32,7 +32,7 @@
 
   <text x="80" y="232" font-family="Sora, sans-serif" font-weight="800" font-size="52" fill="#FFFFFF" letter-spacing="-1.5">Get more <tspan fill="#C5FF4F">revenue,</tspan></text>
   <text x="80" y="298" font-family="Sora, sans-serif" font-weight="800" font-size="52" fill="#C5FF4F" letter-spacing="-1.5">return visits, and</text>
-  <text x="80" y="364" font-family="Sora, sans-serif" font-weight="800" font-size="52" letter-spacing="-1.5" xml:space="preserve"><tspan fill="#C5FF4F">value</tspan><tspan fill="#FFFFFF"> from every</tspan></text>
+  <text x="80" y="364" font-family="Sora, sans-serif" font-weight="800" font-size="52" letter-spacing="-1.5" xml:space="preserve"><tspan fill="#C5FF4F">value</tspan><tspan fill="#FFFFFF" dx="14">from every</tspan></text>
   <text x="80" y="430" font-family="Sora, sans-serif" font-weight="800" font-size="52" fill="#FFFFFF" letter-spacing="-1.5">customer.</text>
 
   <text x="80" y="510" font-family="'Outfit', sans-serif" font-size="24" font-weight="500" fill="rgba(255,255,255,0.80)">No app to download. No points card to remember.</text>
