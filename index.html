@@ -57,7 +57,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=19">
+<link rel="stylesheet" href="styles.css?v=24">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body class="home">
@@ -77,7 +77,7 @@
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <h1>Get more <span class="accent">revenue, return visits, and value</span> from every customer</h1>
+      <h1>Get more <span class="rot" aria-live="polite"><span class="rot-inner">revenue</span></span><br><span class="h1-nowrap">from every customer</span></h1>
       <p class="hero-sub">Customers scan a Giin QR code in your venue and are presented with simple tasks that they can complete in order to earn rewards like discounts or free items. You set the tasks &mdash; like spending a certain amount or posting about your venue &mdash; and you choose when rewards can be redeemed, allowing you to <span class="em-ul">drive the exact customer behavior your business needs.</span></p>
       <div class="hero-cta">
         <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-lime">Book a call</a>
@@ -438,6 +438,59 @@
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>lucide.createIcons();</script>
+<script>
+(function () {
+  var rot = document.querySelector('.home h1 .rot');
+  if (!rot) return;
+  var inner = rot.querySelector('.rot-inner');
+  var words = ['revenue', 'visits', 'reviews', 'value'];
+  var widths = [];
+  var i = 0;
+
+  function measure() {
+    var saved = inner.textContent;
+    var savedWidth = rot.style.width;
+    rot.style.width = 'auto';
+    widths = words.map(function (w) {
+      inner.textContent = w;
+      return inner.getBoundingClientRect().width;
+    });
+    inner.textContent = saved || words[0];
+    rot.style.width = (widths[words.indexOf(inner.textContent)] || widths[0]) + 'px';
+  }
+
+  function start() {
+    setInterval(function () {
+      inner.classList.add('fading');
+      var next = (i + 1) % words.length;
+      setTimeout(function () {
+        inner.textContent = words[next];
+        rot.style.width = widths[next] + 'px';
+        inner.classList.remove('fading');
+        i = next;
+      }, 320);
+    }, 2000);
+  }
+
+  function init() {
+    inner.textContent = words[0];
+    measure();
+    start();
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(init);
+  } else {
+    init();
+  }
+
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(measure, 120);
+  });
+})();
+</script>
 
 </body>
 </html>
