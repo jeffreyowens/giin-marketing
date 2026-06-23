@@ -363,10 +363,10 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .loop-card{position:relative;aspect-ratio:1/1;width:100%;max-width:400px;margin-inline:auto;border-radius:28px;background:rgba(6,2,18,0.92);border:1.5px solid rgba(197,255,79,0.32);box-shadow:0 0 0 1px rgba(197,255,79,0.1), 0 24px 60px rgba(0,0,0,0.55), 0 0 70px rgba(197,255,79,0.13);overflow:hidden;}
 .loop-stage{position:absolute;inset:0;}
 .loop-svg{position:absolute;inset:0;width:100%;height:100%;}
-.loop-node{position:absolute;transform:translate(-50%,-50%);width:39%;max-width:172px;height:142px;display:flex;flex-direction:column;justify-content:center;background:#0A0414;border:1.5px solid rgba(255,255,255,0.14);border-radius:18px;padding:15px;overflow:hidden;z-index:3;animation:loop-nodeglow 9s ease-in-out infinite;}
-.loop-node-engage{left:50%;top:25%;animation-delay:-0.9s;}
-.loop-node-earn{left:78.5%;top:75%;animation-delay:-6.9s;}
-.loop-node-return{left:21.5%;top:75%;animation-delay:-3.9s;}
+.loop-node{position:absolute;transform:translate(-50%,-50%);width:39%;max-width:172px;height:142px;display:flex;flex-direction:column;justify-content:center;background:#0A0414;border:1.5px solid rgba(255,255,255,0.14);border-radius:18px;padding:15px;overflow:hidden;z-index:3;animation:loop-nodeglow 14s ease-in-out infinite;}
+.loop-node-engage{left:50%;top:25%;animation-delay:-1.4s;}
+.loop-node-earn{left:78.5%;top:75%;animation-delay:-10.73s;}
+.loop-node-return{left:21.5%;top:75%;animation-delay:-6.07s;}
 .loop-node-hd{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
 .loop-node-hd svg{width:20px;height:20px;flex-shrink:0;stroke:var(--lime);}
 .loop-node-hd span{font-family:var(--font-head);font-weight:700;font-size:16px;color:#fff;}
