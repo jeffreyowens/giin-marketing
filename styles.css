@@ -344,6 +344,11 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--lime); margin-bottom: 20px; display: inline-block; }
 .home h1 { font-family: var(--font-head); font-weight: 800; font-size: 54px; line-height: 1.05; letter-spacing: -1.5px; color: #fff; margin-bottom: 22px; }
 .home h1 .accent { color: var(--lime); }
+.home h1 .h1-nowrap { white-space: nowrap; }
+.home h1 .rot { display: inline-block; color: var(--lime); position: relative; vertical-align: baseline; white-space: nowrap; text-align: left; transition: width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.home h1 .rot-inner { display: inline-block; opacity: 1; transform: translateY(0); transition: opacity 0.32s ease, transform 0.32s ease; white-space: nowrap; }
+.home h1 .rot-inner.fading { opacity: 0; transform: translateY(-0.18em); }
+@media (prefers-reduced-motion: reduce) { .home h1 .rot { transition: none; } .home h1 .rot-inner { transition: none; } }
 .hero-sub { font-size: 18.5px; color: var(--w85); line-height: 1.55; max-width: 500px; margin-bottom: 30px; }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero-note { margin-bottom: 22px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--lime); }
@@ -642,9 +647,15 @@ footer { padding: 50px 0 44px; border-top: 1px solid var(--card-border); backgro
 .foot-links a { color: var(--w85); font-size: 14px; text-decoration: none; }
 .foot-links a:hover { color: #fff; }
 
+@media (max-width: 1200px) and (min-width: 901px) {
+  .home h1 { font-size: 44px; letter-spacing: -1.2px; }
+}
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .home h1 { font-size: 42px; }
   .steps, .wins-grid, .diff-grid { grid-template-columns: 1fr; }
   .sec-title { font-size: 30px; } .category .huge { font-size: 56px; }
+}
+@media (max-width: 480px) {
+  .home h1 { font-size: 34px; letter-spacing: -1px; }
 }
