@@ -57,7 +57,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=33">
+<link rel="stylesheet" href="styles.css?v=41">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body class="home">
@@ -365,6 +365,93 @@
   </div>
 </section>
 
+<!-- YOU'RE IN CONTROL -->
+<section class="control" id="control">
+  <div class="wrap">
+    <div class="sec-eyebrow">You're in control</div>
+    <h2 class="sec-title">Powerful control, zero hassle.</h2>
+    <p class="sec-sub">Set up any promotion you can imagine &mdash; then let Giin enforce the rules for you, automatically.</p>
+
+    <div class="ctrl-part">
+      <div class="ctrl-part-head">Configure anything</div>
+      <div class="ctrl-grid">
+
+        <!-- Point 1 -->
+        <div class="ctrl-card">
+          <div class="ctrl-vis ctrl-vis-1">
+            <div class="ctrl-field">
+              <div class="ctrl-flabel">Task</div>
+              <div class="ctrl-input"><span class="task-typer-text"></span><span class="task-typer-caret"></span></div>
+              <div class="ctrl-alt">also: post &amp; tag &middot; try featured item &middot; &hellip;</div>
+            </div>
+            <div class="ctrl-mid-arrow"><i data-lucide="arrow-down"></i></div>
+            <div class="ctrl-field">
+              <div class="ctrl-flabel">Reward</div>
+              <div class="ctrl-pill"><span>Free item</span><i data-lucide="chevron-down"></i></div>
+              <div class="ctrl-alt">also: discount % &middot; discount amount &middot; custom &middot; &hellip;</div>
+            </div>
+            <div class="ctrl-template-pill"><i data-lucide="sparkles"></i>Use a template</div>
+          </div>
+          <h3 class="ctrl-h">Any task, any reward</h3>
+          <p class="ctrl-p">Set whatever task you want &mdash; spend a minimum, post about your venue, try a featured item &mdash; and offer whatever reward fits: a discount, a free item, premium treatment. Or start fast with ready-made templates.</p>
+        </div>
+
+        <!-- Point 2 -->
+        <div class="ctrl-card">
+          <div class="ctrl-vis">
+            <div class="ctrl-rule">
+              <div class="ctrl-flabel">Redeemable</div>
+              <div class="ctrl-pill"><span>On a return visit</span><i data-lucide="chevron-down"></i></div>
+            </div>
+            <div class="ctrl-rule">
+              <div class="ctrl-flabel">Valid days</div>
+              <div class="ctrl-days">
+                <span class="ctrl-day on">M</span>
+                <span class="ctrl-day on">T</span>
+                <span class="ctrl-day on">W</span>
+                <span class="ctrl-day on">T</span>
+                <span class="ctrl-day">F</span>
+                <span class="ctrl-day">S</span>
+                <span class="ctrl-day">S</span>
+              </div>
+            </div>
+            <div class="ctrl-rule">
+              <div class="ctrl-flabel">Expires</div>
+              <div class="ctrl-pill"><span>July 15, 2026</span><i data-lucide="calendar"></i></div>
+            </div>
+          </div>
+          <h3 class="ctrl-h">Rules that match your business</h3>
+          <p class="ctrl-p">Decide when rewards can be redeemed &mdash; on a return visit, only on slow days, or only during a specific event like Songkran. You choose how long they last before they expire.</p>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="ctrl-card">
+          <div class="ctrl-vis ctrl-vis-offers">
+            <div class="ctrl-offer">
+              <div class="ctrl-offer-tag">Students</div>
+              <div class="ctrl-offer-row"><span class="ctrl-offer-label">Task</span><span>Show university ID</span></div>
+              <div class="ctrl-offer-row"><span class="ctrl-offer-label">Reward</span><span class="ctrl-offer-reward">15% discount</span></div>
+            </div>
+            <div class="ctrl-offer">
+              <div class="ctrl-offer-tag">Influencers</div>
+              <div class="ctrl-offer-row"><span class="ctrl-offer-label">Task</span><span>Post and tag us on IG</span></div>
+              <div class="ctrl-offer-row"><span class="ctrl-offer-label">Reward</span><span class="ctrl-offer-reward">&#3647;100 discount</span></div>
+            </div>
+            <div class="ctrl-offer">
+              <div class="ctrl-offer-tag">High spenders</div>
+              <div class="ctrl-offer-row"><span class="ctrl-offer-label">Task</span><span>Spend &#3647;4,000</span></div>
+              <div class="ctrl-offer-row"><span class="ctrl-offer-label">Reward</span><span class="ctrl-offer-reward">Free collagen treatment</span></div>
+            </div>
+          </div>
+          <h3 class="ctrl-h">Different offers for different customers</h3>
+          <p class="ctrl-p">Run different tasks and rewards for different customer types &mdash; so the right offer reaches the right person.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- THE DIFFERENCE -->
 <section class="diff" id="difference">
   <div class="wrap">
@@ -511,6 +598,43 @@
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>lucide.createIcons();</script>
+<script>
+(function () {
+  var textEl = document.querySelector('.task-typer-text');
+  if (!textEl) return;
+  var words = ['Spend ฿500', 'Leave a review', 'Wear our merch'];
+  var TYPE_SPEED = 65;
+  var ERASE_SPEED = 35;
+  var HOLD_MS = 1600;
+  var BLANK_MS = 250;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) { textEl.textContent = words[0]; return; }
+  var wordIndex = 0, charIndex = 0, phase = 'typing';
+  function tick() {
+    var current = words[wordIndex];
+    var delay;
+    if (phase === 'typing') {
+      charIndex++;
+      textEl.textContent = current.slice(0, charIndex);
+      if (charIndex >= current.length) { phase = 'holding'; delay = HOLD_MS; }
+      else { delay = TYPE_SPEED; }
+    } else if (phase === 'holding') {
+      phase = 'erasing'; delay = ERASE_SPEED;
+    } else if (phase === 'erasing') {
+      charIndex--;
+      textEl.textContent = current.slice(0, charIndex);
+      if (charIndex <= 0) { phase = 'blank'; delay = BLANK_MS; }
+      else { delay = ERASE_SPEED; }
+    } else {
+      wordIndex = (wordIndex + 1) % words.length;
+      charIndex = 0; phase = 'typing'; delay = TYPE_SPEED;
+    }
+    setTimeout(tick, delay);
+  }
+  textEl.textContent = '';
+  setTimeout(tick, 500);
+})();
+</script>
 <script>
 (function () {
   var rot = document.querySelector('.home h1 .rot');
