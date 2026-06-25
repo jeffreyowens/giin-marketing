@@ -57,7 +57,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=47">
+<link rel="stylesheet" href="styles.css?v=50">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body class="home">
@@ -107,31 +107,11 @@
           </linearGradient>
         </defs>
         <g transform="translate(0 50)">
-          <circle cx="300" cy="300" r="200" fill="none" stroke="rgba(197,255,79,0.07)" stroke-width="11" filter="url(#gl-ringglow)"/>
-          <circle class="loop-radar" cx="300" cy="300" r="200"/>
-          <circle class="loop-radar" cx="300" cy="300" r="200" style="animation-delay:-2.25s"/>
-          <g class="loop-ringpulse" filter="url(#gl-ringglow)">
-            <circle class="loop-ring" cx="300" cy="300" r="200"/>
-          </g>
+          <circle class="loop-ring" cx="300" cy="300" r="200"/>
           <g class="loop-chev">
             <path d="M-9 -7 L7 0 L-9 7 Z" transform="translate(473 200) rotate(60)"/>
             <path d="M-9 -7 L7 0 L-9 7 Z" transform="translate(300 500) rotate(180)"/>
             <path d="M-9 -7 L7 0 L-9 7 Z" transform="translate(127 200) rotate(300)"/>
-          </g>
-          <circle class="loop-tail" r="9" fill="rgba(197,255,79,0.30)">
-            <animateMotion dur="14s" repeatCount="indefinite" begin="0.42s"><mpath href="#gl-path"/></animateMotion>
-          </circle>
-          <circle class="loop-tail" r="7" fill="rgba(197,255,79,0.45)">
-            <animateMotion dur="14s" repeatCount="indefinite" begin="0.23s"><mpath href="#gl-path"/></animateMotion>
-          </circle>
-          <g filter="url(#gl-glow)">
-            <circle r="22" fill="rgba(197,255,79,0.22)">
-              <animateMotion dur="14s" repeatCount="indefinite"><mpath href="#gl-path"/></animateMotion>
-            </circle>
-            <circle r="10" fill="#C5FF4F">
-              <animate attributeName="r" values="9;13;9" dur="2.4s" repeatCount="indefinite"/>
-              <animateMotion dur="14s" repeatCount="indefinite"><mpath href="#gl-path"/></animateMotion>
-            </circle>
           </g>
         </g>
       </svg>
@@ -159,18 +139,30 @@
       </div>
     </div>
   </div>
-  <div class="loop-eyebrow">One QR. Real results. Setup in an afternoon.</div>
-  <div class="loop-src">Live results from Seenspace, Bangkok</div>
-  <div class="loop-stats">
-    <div class="loop-stat"><div class="loop-num">650+</div><div class="loop-lbl">Monthly customer contacts</div></div>
-    <div class="loop-stat"><div class="loop-num">580+</div><div class="loop-lbl">Monthly tasks completed</div></div>
-    <div class="loop-stat"><div class="loop-num">80+</div><div class="loop-lbl">Repeat customers brought back a month</div></div>
-    <div class="loop-stat"><div class="loop-num">18+</div><div class="loop-lbl">Incremental reviews added daily</div></div>
-  </div>
-  <div class="loop-fine">Monthly figures projected from daily averages.</div>
 </div>
   </div>
 </header>
+
+<!-- LIVE STATS BANNER -->
+<section class="livestats">
+  <div class="wrap">
+    <div class="livestats-eyebrow">Live results from one venue &mdash; Seenspace, Bangkok &middot; Since June 3, 2026</div>
+    <div class="livestats-row">
+      <div class="livestats-stat">
+        <div class="livestats-num">430+</div>
+        <div class="livestats-lbl">active users</div>
+      </div>
+      <div class="livestats-stat">
+        <div class="livestats-num">400+</div>
+        <div class="livestats-lbl">tasks completed</div>
+      </div>
+      <div class="livestats-stat">
+        <div class="livestats-num">145+</div>
+        <div class="livestats-lbl">rewards redeemed</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SEE IT IN ACTION (phone demo, its own section) -->
 <section class="demo-sec" id="demo-preview">
@@ -184,12 +176,6 @@
         </div>
       </div>
       <div class="demo-copy">
-        <div class="demo-stat">
-          <div class="demo-stat-num">500+</div>
-          <div class="demo-stat-label">active monthly users at a single venue</div>
-          <p class="demo-stat-caption">Real engagement, not a feature nobody touches.</p>
-        </div>
-
         <div class="demo-points">
           <div class="demo-point">
             <div class="demo-point-icon"><i data-lucide="feather"></i></div>
