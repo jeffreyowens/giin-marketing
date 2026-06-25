@@ -768,6 +768,9 @@ section { padding: 86px 0; }
   .enforce-copy { max-width: none; justify-self: stretch; order: 2; }
   .enforce-phone-stage { order: 1; }
 }
+@media (max-width: 600px) {
+  .ctrl-part-head-2 { flex-direction: column; gap: 10px; }
+}
 
 /* BUILT FOR YOUR VENUE - chip list */
 .venues { background: var(--bg); }
