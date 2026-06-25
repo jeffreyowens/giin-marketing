@@ -353,9 +353,41 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero-note { margin-bottom: 22px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--lime); }
 
-/* DEMO SECTION (phone gets its own home) */
+/* DEMO SECTION (phone + supporting copy column) */
 .demo-sec { background: linear-gradient(180deg, var(--bg), var(--bg-purple)); }
-.demo-sec .phone-stage { margin-top: 8px; }
+.demo-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; column-gap: 60px; row-gap: 32px; align-items: start; }
+.demo-left { grid-column: 1 / -1; grid-row: 1; margin-bottom: 8px; }
+.demo-sec .phone-stage { grid-column: 1; grid-row: 2; align-self: start; }
+.demo-copy { grid-column: 2; grid-row: 2; align-self: center; max-width: 480px; justify-self: end; }
+.demo-header { margin-bottom: 8px; }
+.demo-eyebrow { text-align: left !important; margin-bottom: 14px; }
+.demo-title { font-family: var(--font-head); font-weight: 800; font-size: 38px; letter-spacing: -0.8px; color: #fff; line-height: 1.1; margin: 0 0 16px; }
+.demo-sub { color: var(--w85); font-size: 17px; line-height: 1.55; margin: 0 0 32px; }
+.demo-stat { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(197,255,79,0.10), rgba(255,255,255,0.04) 55%); border: 1px solid var(--lime-border); border-radius: 22px; padding: 28px 28px 26px; margin-bottom: 30px; }
+.demo-stat::before { content:''; position:absolute; top:-30px; right:-30px; width:160px; height:160px; border-radius:50%; background: rgba(197,255,79,0.20); filter: blur(50px); }
+.demo-stat::after { content:''; position:absolute; bottom:-40px; left:-30px; width:140px; height:140px; border-radius:50%; background: rgba(155,100,220,0.28); filter: blur(44px); }
+.demo-stat > * { position: relative; }
+.demo-stat-num { font-family: var(--font-reward); font-weight: 400; font-size: 86px; letter-spacing: 1px; color: var(--lime); line-height: 1; text-shadow: 0 0 36px var(--purple-glow), 0 0 14px rgba(155,100,220,0.4); margin-bottom: 8px; }
+.demo-stat-label { font-family: var(--font-head); font-weight: 700; font-size: 17px; color: #fff; line-height: 1.3; margin-bottom: 12px; }
+.demo-stat-caption { color: var(--w70); font-size: 13.5px; line-height: 1.5; margin: 0; }
+.demo-points { display: flex; flex-direction: column; gap: 18px; }
+.demo-point { display: flex; gap: 14px; align-items: flex-start; }
+.demo-point-icon { flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; background: rgba(197,255,79,0.10); border: 1px solid rgba(197,255,79,0.24); margin-top: 2px; }
+.demo-point-icon svg { width: 20px; height: 20px; stroke: var(--lime); stroke-width: 1.85; }
+.demo-point-body { flex: 1; min-width: 0; }
+.demo-point-h { font-family: var(--font-head); font-weight: 700; font-size: 16px; color: #fff; margin: 0 0 4px; line-height: 1.25; }
+.demo-point-p { color: var(--w70); font-size: 14px; line-height: 1.5; margin: 0; }
+.demo-sec .phone-stage { margin-top: 0; }
+@media (max-width: 900px) {
+  .demo-grid { grid-template-columns: 1fr; grid-template-rows: auto; column-gap: 0; row-gap: 36px; }
+  .demo-left, .demo-sec .phone-stage, .demo-copy { grid-column: 1; grid-row: auto; max-width: none; justify-self: stretch; }
+  .demo-left { order: 1; }
+  .demo-sec .phone-stage { order: 2; }
+  .demo-copy { order: 3; }
+  .demo-title { font-size: 30px; }
+  .demo-stat { padding: 24px; }
+  .demo-stat-num { font-size: 64px; }
+}
 
 /* ENGAGE / EARN / RETURN animated money-making loop */
 .loop-panel{max-width:440px;margin-inline:auto;width:100%;}
@@ -416,13 +448,13 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .signin-input { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); border-radius: 10px; padding: 10px 12px; margin-bottom: 14px; min-height: 38px; }
 .signin-cc { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--w70); border-right: 1px solid var(--card-border); padding-right: 8px; }
 .signin-num { font-family: var(--font-mono); font-size: 13.5px; font-weight: 700; color: #fff; letter-spacing: 0.5px; display: inline-flex; align-items: center; white-space: nowrap; overflow: hidden; }
-.num-typed { display: inline-block; overflow: hidden; white-space: nowrap; vertical-align: bottom; animation: type-num 24s linear infinite; max-width: 0; }
-@keyframes type-num { 0%,3%{max-width:0} 9%,100%{max-width:90px} }
+.num-typed { display: inline-block; overflow: hidden; white-space: nowrap; vertical-align: bottom; animation: type-num 28s linear infinite; max-width: 0; }
+@keyframes type-num { 0%,3%{max-width:0} 8%,100%{max-width:90px} }
 .signin-caret { display: inline-block; width: 1.5px; height: 13px; background: var(--lime); margin-left: 3px; animation: caret-blink 0.9s steps(2) infinite; }
 @keyframes caret-blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
 .signin-btn { background: var(--lime); color: var(--lime-dark); border-radius: 10px; padding: 11px; text-align: center; font-family: var(--font-body); font-weight: 800; font-size: 14px; position: relative; overflow: hidden; }
-.s1 .tap-dot { animation: tap-s1 24s ease infinite; }
-@keyframes tap-s1 { 0%,11%{transform:translate(-50%,-50%) scale(0);opacity:0} 12%{opacity:0.7} 16%{transform:translate(-50%,-50%) scale(2.6);opacity:0} 100%{opacity:0} }
+.s1 .tap-dot { animation: tap-s1 28s ease infinite; }
+@keyframes tap-s1 { 0%,9%{transform:translate(-50%,-50%) scale(0);opacity:0} 10%{opacity:0.7} 14%{transform:translate(-50%,-50%) scale(2.6);opacity:0} 100%{opacity:0} }
 
 /* REDEEM scene (s5) — coupon with QR + scan animation */
 .coupon { margin: auto 0; background: #fff; border-radius: 16px; padding: 16px 14px 14px; position: relative; box-shadow: 0 0 36px -14px rgba(197,255,79,0.5); width: 188px; }
@@ -467,6 +499,7 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .center-scene { align-items: center; justify-content: center; text-align: center; }
 .big-badge { width: 88px; height: 88px; border-radius: 24px; display:flex; align-items:center; justify-content:center; font-size: 42px; margin-bottom: 16px; }
 .badge-neutral { background: rgba(255,255,255,0.08); border: 1px solid var(--card-border); }
+.time-badge svg { width: 44px; height: 44px; stroke: var(--lime); stroke-width: 1.75; }
 .badge-lime { background: var(--lime); box-shadow: 0 0 50px -6px rgba(197,255,79,0.6); }
 .scene-h { font-family: var(--font-head); font-weight: 700; font-size: 18px; color: #fff; margin-bottom: 6px; }
 .scene-reward-big { font-family: var(--font-reward); font-weight: 400; font-size: 36px; letter-spacing: 1px; color: #fff; text-shadow: 0 0 30px var(--purple-glow), 0 0 12px rgba(155,100,220,0.4); margin-bottom: 6px; }
@@ -489,19 +522,29 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .predict-prize b { color: var(--lime); }
 
 .pdots { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 8; }
-.pdots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+.pdots span { position: relative; width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+.pdots span::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: #fff; opacity: 0; }
+.pdots .pd1::before { animation: sc1 28s infinite; }
+.pdots .pd2::before { animation: sc2 28s infinite; }
+.pdots .pd3::before { animation: sc3 28s infinite; }
+.pdots .pd4::before { animation: sc4 28s infinite; }
+.pdots .pd4b::before { animation: sc4b 28s infinite; }
+.pdots .pd5::before { animation: sc5 28s infinite; }
+.pdots .pd6::before { animation: sc6 28s infinite; }
+@media (prefers-reduced-motion: reduce) { .pdots span::before { animation: none !important; opacity: 0; } }
 
-/* scene + step timing: 6 scenes over 18s, step text changes with scene */
-@keyframes sc1 { 0%,1%{opacity:0} 3%,15%{opacity:1} 17%,100%{opacity:0} }
-@keyframes sc2 { 0%,17%{opacity:0} 19%,31%{opacity:1} 33%,100%{opacity:0} }
-@keyframes sc3 { 0%,33%{opacity:0} 35%,47%{opacity:1} 49%,100%{opacity:0} }
-@keyframes sc4 { 0%,49%{opacity:0} 51%,63%{opacity:1} 65%,100%{opacity:0} }
-@keyframes sc5 { 0%,65%{opacity:0} 67%,81%{opacity:1} 83%,100%{opacity:0} }
-@keyframes sc6 { 0%,83%{opacity:0} 85%,97%{opacity:1} 99%,100%{opacity:0} }
-.s1{animation:sc1 24s infinite}.s2{animation:sc2 24s infinite}.s3{animation:sc3 24s infinite}.s4{animation:sc4 24s infinite}.s5{animation:sc5 24s infinite}.s6{animation:sc6 24s infinite}
+/* scene + step timing: 7 scenes over 28s (incl. brief s4b "time passes" interstitial), step text changes with scene */
+@keyframes sc1 { 0%,1%{opacity:0} 3%,13%{opacity:1} 15%,100%{opacity:0} }
+@keyframes sc2 { 0%,15%{opacity:0} 17%,27%{opacity:1} 29%,100%{opacity:0} }
+@keyframes sc3 { 0%,29%{opacity:0} 31%,41%{opacity:1} 43%,100%{opacity:0} }
+@keyframes sc4 { 0%,43%{opacity:0} 45%,55%{opacity:1} 57%,100%{opacity:0} }
+@keyframes sc4b { 0%,57%{opacity:0} 59%,69%{opacity:1} 71%,100%{opacity:0} }
+@keyframes sc5 { 0%,71%{opacity:0} 73%,83%{opacity:1} 85%,100%{opacity:0} }
+@keyframes sc6 { 0%,85%{opacity:0} 87%,97%{opacity:1} 99%,100%{opacity:0} }
+.s1{animation:sc1 28s infinite}.s2{animation:sc2 28s infinite}.s3{animation:sc3 28s infinite}.s4{animation:sc4 28s infinite}.s4b{animation:sc4b 28s infinite}.s5{animation:sc5 28s infinite}.s6{animation:sc6 28s infinite}
 /* step labels fade in sync */
 .st { position: absolute; left: 50%; transform: translateX(-50%); opacity: 0; white-space: nowrap; }
-.st1{animation:sc1 24s infinite}.st2{animation:sc2 24s infinite}.st3{animation:sc3 24s infinite}.st4{animation:sc4 24s infinite}.st5{animation:sc5 24s infinite}.st6{animation:sc6 24s infinite}
+.st1{animation:sc1 28s infinite}.st2{animation:sc2 28s infinite}.st3{animation:sc3 28s infinite}.st4{animation:sc4 28s infinite}.st4b{animation:sc4b 28s infinite}.st5{animation:sc5 28s infinite}.st6{animation:sc6 28s infinite}
 @media (prefers-reduced-motion: reduce){ .scene,.st{animation:none!important} .s2,.st2{opacity:1} .scan-laser{animation:none} }
 
 /* ===== SECTIONS ===== */

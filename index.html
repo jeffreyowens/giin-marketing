@@ -57,7 +57,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=26">
+<link rel="stylesheet" href="styles.css?v=33">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body class="home">
@@ -176,10 +176,46 @@
 <!-- SEE IT IN ACTION (phone demo, its own section) -->
 <section class="demo-sec" id="demo-preview">
   <div class="wrap">
-    <div class="sec-eyebrow">See it in action</div>
-    <h2 class="sec-title">What your customers see.</h2>
-    <p class="sec-sub">From the first scan to the reward that brings them back.</p>
-    <div class="phone-stage">
+    <div class="demo-grid">
+      <div class="demo-left">
+        <div class="demo-header">
+          <div class="sec-eyebrow demo-eyebrow">See it in action</div>
+          <h2 class="demo-title">Customers actually use it.</h2>
+          <p class="demo-sub">The reason Giin works is simple: customers want in. No friction, no app, and rewards they actually care about.</p>
+        </div>
+      </div>
+      <div class="demo-copy">
+        <div class="demo-stat">
+          <div class="demo-stat-num">500+</div>
+          <div class="demo-stat-label">active monthly users at a single venue</div>
+          <p class="demo-stat-caption">Real engagement, not a feature nobody touches.</p>
+        </div>
+
+        <div class="demo-points">
+          <div class="demo-point">
+            <div class="demo-point-icon"><i data-lucide="download"></i></div>
+            <div class="demo-point-body">
+              <h3 class="demo-point-h">Nothing to download</h3>
+              <p class="demo-point-p">They sign in with their phone number and a one-time code. No app, no account to create &mdash; so there's no barrier to joining in.</p>
+            </div>
+          </div>
+          <div class="demo-point">
+            <div class="demo-point-icon"><i data-lucide="wallet"></i></div>
+            <div class="demo-point-body">
+              <h3 class="demo-point-h">Rewards live on their phone</h3>
+              <p class="demo-point-p">Every reward sits in their Giin wallet, always with them. No paper coupon to lose or forget &mdash; so the rewards you give actually drive return visits.</p>
+            </div>
+          </div>
+          <div class="demo-point">
+            <div class="demo-point-icon"><i data-lucide="gift"></i></div>
+            <div class="demo-point-body">
+              <h3 class="demo-point-h">Real rewards, not points</h3>
+              <p class="demo-point-p">Customers earn things they actually want &mdash; a free item, a discount, premium treatment &mdash; not loyalty points that pile up and mean nothing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-stage">
       <div class="phone-glow"></div>
       <div class="phone">
         <div class="phone-notch"></div>
@@ -187,10 +223,11 @@
           <div class="screen-head"><div class="screen-logo">Giin</div><div class="screen-venue">The Corner Pub</div></div>
           <div class="screen-step" style="position:relative;height:30px;">
             <span class="tag st st1">Step 1 &middot; Customer signs in to your venue</span>
-            <span class="tag st st2">Step 2 &middot; They do a task</span>
+            <span class="tag st st2">Step 2 &middot; They do a task set by you</span>
             <span class="tag st st3">Step 3 &middot; Staff validates</span>
             <span class="tag st st4">Step 4 &middot; Customer earns reward coupon</span>
-            <span class="tag st st5">Step 5 &middot; Customer redeems reward</span>
+            <span class="tag st st4b">A few days later&hellip;</span>
+            <span class="tag st st5">Step 5 &middot; Customer redeems coupon</span>
             <span class="tag st st6">Step 6 &middot; Venue earns extra revenue</span>
           </div>
           <div class="screen-body">
@@ -224,6 +261,11 @@
               <div class="reward-pill"><span class="reward-emoji">&#127866;</span><span class="reward-name">Free drink</span></div>
               <div class="reward-window">Redeemable <b>tomorrow</b> through <b>July 15</b></div>
             </div>
+            <div class="scene s4b center-scene">
+              <div class="big-badge badge-neutral time-badge"><i data-lucide="calendar-days"></i></div>
+              <div class="scene-h">A few days later&hellip;</div>
+              <div class="scene-p">Customer returns to redeem the coupon</div>
+            </div>
             <div class="scene s5 center-scene">
               <div class="coupon">
                 <div class="coupon-eyebrow">Your reward</div>
@@ -247,10 +289,11 @@
               </div>
               <div class="scene-p s6-tag">A visit that wouldn't have happened otherwise</div>
             </div>
-            <div class="pdots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="pdots"><span class="pd1"></span><span class="pd2"></span><span class="pd3"></span><span class="pd4"></span><span class="pd4b"></span><span class="pd5"></span><span class="pd6"></span></div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </section>
