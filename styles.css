@@ -554,7 +554,7 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 @media (prefers-reduced-motion: reduce) { .pdots span::before { animation: none !important; opacity: 0; } }
 
 /* scene + step timing: 7 scenes over 28s (incl. brief s4b "time passes" interstitial), step text changes with scene */
-@keyframes sc1 { 0%,1%{opacity:0} 3%,13%{opacity:1} 15%,100%{opacity:0} }
+@keyframes sc1 { 0%,13%{opacity:1} 15%,100%{opacity:0} }
 @keyframes sc2 { 0%,15%{opacity:0} 17%,27%{opacity:1} 29%,100%{opacity:0} }
 @keyframes sc3 { 0%,29%{opacity:0} 31%,41%{opacity:1} 43%,100%{opacity:0} }
 @keyframes sc4 { 0%,43%{opacity:0} 45%,55%{opacity:1} 57%,100%{opacity:0} }
@@ -717,7 +717,7 @@ section { padding: 86px 0; }
 .ctrl-part-head-2 svg { width: 22px; height: 22px; stroke: var(--lime); stroke-width: 2; flex-shrink: 0; }
 .enforce-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .enforce-copy { max-width: 480px; justify-self: end; position: relative; z-index: 1; }
-.enforce-text { font-family: var(--font-head); font-weight: 600; font-size: 20px; line-height: 1.55; color: var(--w85); margin: 0; }
+.enforce-text { font-family: var(--font-body); font-weight: 400; font-size: 20px; line-height: 1.55; color: var(--w85); margin: 0; }
 .enforce-phone-stage { display: flex; justify-content: center; position: relative; }
 
 .enforce-phone { box-shadow: 0 50px 90px -24px rgba(0,0,0,0.75), 0 0 0 9px rgba(255,255,255,0.02), 0 0 80px -20px rgba(197,255,79,0.18); }
@@ -866,3 +866,32 @@ footer { padding: 50px 0 44px; border-top: 1px solid var(--card-border); backgro
 @media (max-width: 400px) {
   .home h1 { font-size: 30px; letter-spacing: -0.8px; }
 }
+
+/* ============================================================
+   Scroll-triggered animations
+   ------------------------------------------------------------
+   Sections with looping animations only animate while in the
+   viewport. When out of view, animations are removed (so re-entry
+   re-applies them from frame 0) and a sensible resting frame is
+   shown (e.g. step 1 of the demo).
+   ============================================================ */
+
+.demo-sec:not(.in-view) .scene,
+.demo-sec:not(.in-view) .st,
+.demo-sec:not(.in-view) .pdots span::before,
+.demo-sec:not(.in-view) .num-typed,
+.demo-sec:not(.in-view) .s1 .tap-dot,
+.demo-sec:not(.in-view) .scan-laser,
+.demo-sec:not(.in-view) .signin-caret {
+  animation: none !important;
+}
+.demo-sec:not(.in-view) .scene.s1,
+.demo-sec:not(.in-view) .st.st1 { opacity: 1; }
+.demo-sec:not(.in-view) .pdots .pd1::before { opacity: 1; }
+.demo-sec:not(.in-view) .num-typed { max-width: 90px; }
+
+.control:not(.in-view) .enforce-state,
+.control:not(.in-view) .task-typer-caret {
+  animation: none !important;
+}
+.control:not(.in-view) .enforce-state-waiting { opacity: 1; }

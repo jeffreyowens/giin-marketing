@@ -58,7 +58,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=52">
+<link rel="stylesheet" href="styles.css?v=54">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body class="home">
@@ -78,7 +78,7 @@
   <div class="wrap hero-grid">
     <div>
       <h1>Get more <span class="rot" aria-live="polite"><span class="rot-inner">revenue</span></span><br><span class="h1-nowrap">from every customer</span></h1>
-      <p class="hero-sub">With Giin, customers complete simple tasks at your venue to earn rewards that they can redeem on a future visit. You set both &mdash; the customer tasks that benefit you today (like spending more or posting about your venue) and the rewards that bring them back for an additional visit later (like a discount or free item). <span class="em-ul">Get more from today's visit, and get extra visits in the future.</span></p>
+      <p class="hero-sub">With Giin, customers complete simple yet valuable tasks at your venue to earn rewards that they can redeem on a future visit. You set both &mdash; the customer tasks that benefit you today (like spending more or posting about your venue) and the rewards that bring them back for an additional visit later (like a discount or free item). <span class="em-ul">Get more from today's visit, and get extra visits in the future.</span></p>
       <div class="hero-cta">
         <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-lime">Book a call</a>
       </div>
@@ -632,9 +632,31 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>lucide.createIcons();</script>
 <script>
+// Toggle .in-view on the demo + control sections so their CSS animations
+// only run while the section is in the viewport (and restart from frame 0
+// on re-entry).
+(function () {
+  var sections = document.querySelectorAll('.demo-sec, .control');
+  if (!sections.length) return;
+  if (!('IntersectionObserver' in window)) {
+    sections.forEach(function (s) { s.classList.add('in-view'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      entry.target.classList.toggle('in-view', entry.isIntersecting);
+    });
+  }, { threshold: 0.15 });
+  sections.forEach(function (s) { observer.observe(s); });
+})();
+</script>
+<script>
+// Task field typer (.control / Configure anything). Starts when the
+// section enters the viewport, stops + resets to first word when it leaves.
 (function () {
   var textEl = document.querySelector('.task-typer-text');
   if (!textEl) return;
+  var section = document.querySelector('.control');
   var words = ['Spend ฿500', 'Leave a review', 'Wear our merch'];
   var TYPE_SPEED = 65;
   var ERASE_SPEED = 35;
@@ -643,7 +665,9 @@
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) { textEl.textContent = words[0]; return; }
   var wordIndex = 0, charIndex = 0, phase = 'typing';
+  var timer = null, running = false;
   function tick() {
+    if (!running) return;
     var current = words[wordIndex];
     var delay;
     if (phase === 'typing') {
@@ -662,24 +686,44 @@
       wordIndex = (wordIndex + 1) % words.length;
       charIndex = 0; phase = 'typing'; delay = TYPE_SPEED;
     }
-    setTimeout(tick, delay);
+    timer = setTimeout(tick, delay);
   }
-  textEl.textContent = '';
-  setTimeout(tick, 500);
+  function start() {
+    if (running) return;
+    running = true;
+    wordIndex = 0; charIndex = 0; phase = 'typing';
+    textEl.textContent = '';
+    timer = setTimeout(tick, 500);
+  }
+  function stop() {
+    running = false;
+    if (timer) { clearTimeout(timer); timer = null; }
+    textEl.textContent = '';
+  }
+  if (!section || !('IntersectionObserver' in window)) { start(); return; }
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) start(); else stop();
+    });
+  }, { threshold: 0.2 }).observe(section);
 })();
 </script>
 <script>
+// Hero headline word rotator. Pauses + resets to the first word when the
+// hero scrolls out of view, restarts from the first word when it scrolls
+// back in.
 (function () {
   var rot = document.querySelector('.home h1 .rot');
   if (!rot) return;
   var inner = rot.querySelector('.rot-inner');
+  var hero = document.querySelector('.hero');
   var words = ['revenue', 'visits', 'reviews', 'value'];
   var widths = [];
   var i = 0;
+  var intervalId = null, fadeTimerId = null, running = false;
 
   function measure() {
     var saved = inner.textContent;
-    var savedWidth = rot.style.width;
     rot.style.width = 'auto';
     widths = words.map(function (w) {
       inner.textContent = w;
@@ -689,11 +733,11 @@
     rot.style.width = (widths[words.indexOf(inner.textContent)] || widths[0]) + 'px';
   }
 
-  function start() {
-    setInterval(function () {
+  function loop() {
+    intervalId = setInterval(function () {
       inner.classList.add('fading');
       var next = (i + 1) % words.length;
-      setTimeout(function () {
+      fadeTimerId = setTimeout(function () {
         inner.textContent = words[next];
         rot.style.width = widths[next] + 'px';
         inner.classList.remove('fading');
@@ -702,10 +746,35 @@
     }, 2000);
   }
 
+  function start() {
+    if (running) return;
+    running = true;
+    i = 0;
+    inner.classList.remove('fading');
+    inner.textContent = words[0];
+    rot.style.width = widths[0] + 'px';
+    loop();
+  }
+
+  function stop() {
+    running = false;
+    if (intervalId) { clearInterval(intervalId); intervalId = null; }
+    if (fadeTimerId) { clearTimeout(fadeTimerId); fadeTimerId = null; }
+    inner.classList.remove('fading');
+    i = 0;
+    inner.textContent = words[0];
+    rot.style.width = widths[0] + 'px';
+  }
+
   function init() {
     inner.textContent = words[0];
     measure();
-    start();
+    if (!hero || !('IntersectionObserver' in window)) { start(); return; }
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) start(); else stop();
+      });
+    }, { threshold: 0.2 }).observe(hero);
   }
 
   if (document.fonts && document.fonts.ready) {
