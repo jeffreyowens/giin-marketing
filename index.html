@@ -58,7 +58,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=54">
+<link rel="stylesheet" href="styles.css?v=58">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body class="home">
@@ -69,6 +69,7 @@
     <a href="#demo-preview" class="nav-link nav-section">How it works</a>
     <a href="#benefits" class="nav-link nav-section">What you get</a>
     <a href="#control" class="nav-link nav-section">For your venue</a>
+    <a href="https://app.giin.ai/" class="nav-link">Sign in</a>
     <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-lime nav-cta">Book a call</a>
   </div>
 </nav>
@@ -78,7 +79,7 @@
   <div class="wrap hero-grid">
     <div>
       <h1>Get more <span class="rot" aria-live="polite"><span class="rot-inner">revenue</span></span><br><span class="h1-nowrap">from every customer</span></h1>
-      <p class="hero-sub">With Giin, customers complete simple yet valuable tasks at your venue to earn rewards that they can redeem on a future visit. You set both &mdash; the customer tasks that benefit you today (like spending more or posting about your venue) and the rewards that bring them back for an additional visit later (like a discount or free item). <span class="em-ul">Get more from today's visit, and get extra visits in the future.</span></p>
+      <p class="hero-sub">Customers use Giin to complete simple tasks at your venue and earn digital coupons that they can redeem on a future visit. You're in control: set customer tasks that benefit you today (like spending more or posting about your venue) and choose rewards that bring them back again later (like a discount or free item). You decide when each coupon can be redeemed, and Giin enforces these conditions automatically. <span class="em-ul">Get more from every customer, today and on a return visit.</span></p>
       <div class="hero-cta">
         <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-lime">Book a call</a>
       </div>
@@ -181,14 +182,14 @@
             <div class="demo-point-icon"><i data-lucide="feather"></i></div>
             <div class="demo-point-body">
               <h3 class="demo-point-h">Nothing to download</h3>
-              <p class="demo-point-p">They sign in with their phone number and a one-time code. No app, no account to create &mdash; so there's no barrier to joining in.</p>
+              <p class="demo-point-p">They sign in with their phone number and a one-time code. No app, no account to create, no barrier to joining in.</p>
             </div>
           </div>
           <div class="demo-point">
             <div class="demo-point-icon"><i data-lucide="smartphone"></i></div>
             <div class="demo-point-body">
-              <h3 class="demo-point-h">Rewards live on their phone</h3>
-              <p class="demo-point-p">Every reward sits in their Giin wallet, always with them. No paper coupon to lose or forget &mdash; so the rewards you give actually drive return visits.</p>
+              <h3 class="demo-point-h">Coupons live on their phone</h3>
+              <p class="demo-point-p">Every coupon sits in their Giin wallet, always with them. No paper voucher to lose or forget, so the rewards you give actually drive return visits.</p>
             </div>
           </div>
           <div class="demo-point">
@@ -213,7 +214,7 @@
             <span class="tag st st4">Step 4 &middot; Customer earns reward coupon</span>
             <span class="tag st st4b">A few days later&hellip;</span>
             <span class="tag st st5">Step 5 &middot; Staff scans to redeem</span>
-            <span class="tag st st6">Step 6 &middot; Venue earns extra revenue</span>
+            <span class="tag st st6">Step 6 &middot; Venue earns a return visit</span>
           </div>
           <div class="screen-body">
             <div class="scene s1">
@@ -238,12 +239,14 @@
             <div class="scene s3 center-scene">
               <div class="big-badge badge-neutral">&#129489;&#8205;&#127859;</div>
               <div class="scene-h">Staff confirms it</div>
+              <div class="task-verified"><i data-lucide="check"></i><span>Customer left a review</span></div>
               <div class="scene-p">using the Giin staff scanner</div>
             </div>
             <div class="scene s4 center-scene">
               <div class="big-badge badge-lime"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#102000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
               <div class="scene-reward-big">Coupon issued</div>
               <div class="reward-pill"><span class="reward-emoji">&#127866;</span><span class="reward-name">Free drink</span></div>
+              <div class="reward-wallet"><i data-lucide="wallet"></i><span>Saved to your Giin wallet</span></div>
               <div class="reward-window">Redeemable <b>tomorrow</b> through <b>July 15</b></div>
             </div>
             <div class="scene s4b center-scene">
@@ -272,7 +275,7 @@
                 <div class="receipt-line"></div>
                 <div class="receipt-total"><span>Venue earned</span><span class="receipt-total-num">$23</span></div>
               </div>
-              <div class="scene-p s6-tag">A visit that wouldn't have happened otherwise</div>
+              <div class="scene-p s6-tag">extra revenue that wouldn't happen without Giin</div>
             </div>
             <div class="pdots"><span class="pd1"></span><span class="pd2"></span><span class="pd3"></span><span class="pd4"></span><span class="pd4b"></span><span class="pd5"></span><span class="pd6"></span></div>
           </div>
@@ -324,14 +327,14 @@
             <div class="way-icon"><i data-lucide="rotate-ccw"></i></div>
             <div class="way-tile-body">
               <h3 class="way-tile-h">Turn one visit into the next</h3>
-              <p class="way-tile-p">Rewards earned on one visit are redeemed on a later one.</p>
+              <p class="way-tile-p">Coupons earned today become rewards on a later visit.</p>
             </div>
           </div>
           <div class="way-tile">
             <div class="way-icon"><i data-lucide="calendar-clock"></i></div>
             <div class="way-tile-body">
               <h3 class="way-tile-h">Fill your slow days</h3>
-              <p class="way-tile-p">Set rewards to redeem only on slow days or off-peak hours.</p>
+              <p class="way-tile-p">Make coupons redeemable only on slow days or off-peak hours.</p>
             </div>
           </div>
         </div>
@@ -353,7 +356,7 @@
   <div class="wrap">
     <div class="sec-eyebrow">You're in control</div>
     <h2 class="sec-title">Powerful control, zero hassle.</h2>
-    <p class="sec-sub">Set up any promotion you can imagine &mdash; then let Giin enforce the rules for you, automatically.</p>
+    <p class="sec-sub">Set up any promotion you can imagine, then let Giin enforce the rules for you automatically.</p>
 
     <div class="ctrl-part">
       <div class="ctrl-part-head">Configure anything</div>
@@ -404,7 +407,7 @@
             </div>
           </div>
           <h3 class="ctrl-h">Rules that match your business</h3>
-          <p class="ctrl-p">Decide when rewards can be redeemed &mdash; on a return visit, only on slow days, or only during a specific event like Songkran. You choose how long they last before they expire.</p>
+          <p class="ctrl-p">Decide when coupons can be redeemed for rewards: on a return visit, only on slow days, or only during a specific event like Songkran. You choose how long they last before they expire.</p>
         </div>
 
         <!-- Point 3 -->
@@ -427,7 +430,7 @@
             </div>
           </div>
           <h3 class="ctrl-h">Different offers for different customers</h3>
-          <p class="ctrl-p">Run different tasks and rewards for different customer types &mdash; so the right offer reaches the right person.</p>
+          <p class="ctrl-p">Set a variety of tasks and rewards for different customer types, so the right offer reaches the right person.</p>
         </div>
 
       </div>
@@ -437,7 +440,7 @@
       <div class="ctrl-part-head ctrl-part-head-2"><i data-lucide="shield-check"></i><span>And Giin enforces it for you</span></div>
       <div class="enforce-grid">
         <div class="enforce-copy">
-          <p class="enforce-text">Once you set the rules, you never have to police them. If a reward is only redeemable on weekdays, the coupon simply won't open on a weekend. If it expires Friday, it's gone Saturday. Your staff don't have to check, remember, or argue &mdash; <span class="em-ul">the system holds the line, automatically, every time.</span></p>
+          <p class="enforce-text">Once you set the rules, you never have to police them. If a coupon is only redeemable on weekdays, it simply won't open on a weekend. If it expires Friday, it's gone Saturday. Your staff don't have to check, remember, or argue &mdash; <span class="em-ul">the system holds the line, automatically, every time.</span></p>
         </div>
         <div class="enforce-phone-stage">
           <div class="phone enforce-phone">
@@ -539,7 +542,7 @@
   <div class="wrap">
     <div class="sec-eyebrow">Getting started</div>
     <h2 class="sec-title">Set up in an afternoon. Running forever.</h2>
-    <p class="sec-sub">No new hardware, no POS integration, no IT project. We handle setup with you in about half an hour &mdash; then your only job is handing customers a reason to come back.</p>
+    <p class="sec-sub">No new hardware, no POS integration, no IT project. We handle setup with you in about half an hour. Your only job is handing customers a reason to come back.</p>
     <div class="start-strip start-strip-3">
       <div class="start-item">
         <div class="start-n">1</div>
@@ -549,12 +552,12 @@
       <div class="start-item">
         <div class="start-n">2</div>
         <h3 class="start-h">We bring your QR codes</h3>
-        <div class="start-p">In our setup meeting we'll plan where your QR codes go and design the signage they sit on &mdash; table tents, counter cards, wall posters, whatever suits your space. Then we print everything and bring it to you, ready to place.</div>
+        <div class="start-p">In our setup meeting we'll plan where your QR codes go and design the signage they sit on: table tents, counter cards, wall posters, whatever suits your space. Then we print everything and bring it to you, ready to place.</div>
       </div>
       <div class="start-item">
         <div class="start-n">3</div>
         <h3 class="start-h">Your whole team is ready</h3>
-        <div class="start-p">Add your staff to your Giin team and they get the Giin staff scanner to validate tasks and redeem rewards during service. They sign in and use it right from their own phones &mdash; no shared device, no extra hardware.</div>
+        <div class="start-p">Add your staff to your Giin team and they get the Giin staff scanner to validate tasks and redeem rewards during service. They sign in and use it right from their own phones. No shared device, no extra hardware.</div>
       </div>
     </div>
     <p class="start-close">A short training video and a quick in-person session get your whole team comfortable &mdash; and you're never stuck, with a <span class="em-bold" style="color:var(--lime)">direct line to us for support</span> whenever you need it.</p>
@@ -566,7 +569,7 @@
   <div class="wrap">
     <div class="final-card">
       <h2>Let's talk.</h2>
-      <p>A quick call to see if Giin fits your venue. Setup takes an afternoon &mdash; you could be live this week.</p>
+      <p>A quick call to see if Giin fits your venue. Setup takes an afternoon, so you could be live this week.</p>
 
       <div class="hero-cta" style="justify-content:center;">
         <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-lime">Book a call</a>
