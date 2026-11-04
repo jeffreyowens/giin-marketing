@@ -1,32 +1,34 @@
 # giin-marketing
 
-Static marketing site for [giin.ai](https://giin.ai) — plain HTML/CSS/JS, deployed via Cloudflare Pages.
+Static marketing site for [giin.ai](https://giin.ai), plain HTML/CSS/JS, deployed via Cloudflare Pages.
 
 ## Files
 
 | File | Purpose |
 |------|---------|
 | `index.html` | Landing page (B2B, bar/restaurant owners) |
-| `privacy.html` | Privacy Policy |
-| `terms.html` | Terms of Service |
 | `styles.css` | All styles, shared across pages |
-| `assets/` | Images and icons (add here) |
+| `assets/` | Brand lockup, favicons, app icons, OG image |
+
+Privacy and Terms are hosted on the app (`app.giin.ai/privacy`, `app.giin.ai/terms`); there are no local legal pages in this repo.
 
 ## Editing content
 
-All copy is inline in the HTML files — no build step required. Open the file in any text editor, update the text, save, and commit. Cloudflare Pages will deploy automatically on push to `main`.
+All copy is inline in the HTML files, no build step required. Open the file in any text editor, update the text, save, and commit. Cloudflare Pages will deploy automatically on push to `main`.
 
 ### Design tokens (in `styles.css` `:root`)
 
 | Variable | Value | Usage |
 |----------|-------|-------|
-| `--bg` | `#410061` | Page background |
-| `--surface` | `#0D0320` | Cards, footer |
-| `--accent` | `#C5FF4F` | Lime highlights, CTA |
+| `--bg` | `#0A0918` | Page background (ink, Midnight base) |
+| `--surface` | `#14121F` | Cards / surfaces on ink |
+| `--accent` / `--lime` | `#C5FF4F` | Lime, reserved for primary CTAs |
 | `--text` | `#ffffff` | Primary text |
 | `--text-muted` | `rgba(255,255,255,0.65)` | Body copy |
 
-Fonts are loaded from Google Fonts CDN (`Syne` for headings, `Outfit` for body).
+Dark sections use the Midnight treatment: the ink base plus `--midnight-mesh`, two subtle purple radials (`#2E2158` / `#171231` / `#241A48`) carried over from the brand app icon.
+
+Fonts are loaded from Google Fonts CDN (`Sora` for headings, `Outfit` for body, `Syne` for the wordmark, `Bebas Neue` and `JetBrains Mono` for accents).
 
 ## Deployment (Cloudflare Pages)
 
@@ -57,12 +59,12 @@ Cloudflare Pages will give you an exact `*.pages.dev` target after deploy. Add:
 | CNAME | `@` | `<project>.pages.dev` | Proxied |
 | CNAME | `www` | `<project>.pages.dev` | Proxied |
 
-> **Note:** The existing `app.giin.ai` CNAME pointing to Vercel is unaffected — it is a subdomain and does not conflict with the root (`@`) record.
+> **Note:** The existing `app.giin.ai` CNAME pointing to Vercel is unaffected, it is a subdomain and does not conflict with the root (`@`) record.
 
 ## Subsequent deploys
 
-Push to `main` — Cloudflare Pages deploys automatically, usually within 30 seconds.
+Push to `main`, Cloudflare Pages deploys automatically, usually within 30 seconds.
 
 ## Contact / questions
 
-hello@giin.ai — Owens Enterprises LLC
+hello@giin.ai, Owens Enterprises LLC

@@ -460,6 +460,7 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 /* flow: header (fixed height), step bar, content fills rest */
 .screen-head { padding: 38px 20px 10px; text-align: center; flex-shrink: 0; }
 .screen-logo { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--lime); }
+.screen-logo-img { height: 20px; width: auto; display: inline-block; }
 .screen-venue { font-family: var(--font-mono); font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--w70); margin-top: 3px; }
 .screen-step { flex-shrink: 0; text-align: center; padding: 4px 0 8px; }
 .screen-step .tag { display: inline-block; font-family: var(--font-mono); font-size: 8.5px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--lime); background: rgba(0,0,0,0.55); padding: 5px 11px; border-radius: 20px; white-space: nowrap; }
