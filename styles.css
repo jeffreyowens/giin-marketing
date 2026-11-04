@@ -366,6 +366,7 @@ body.home { font-family: var(--font-body); color: var(--w85); background: var(--
 .livestats-stat { text-align: center; }
 .livestats-num { font-family: var(--font-reward); font-weight: 400; font-size: 68px; letter-spacing: 1px; color: var(--lime); line-height: 1; text-shadow: 0 0 30px var(--purple-glow), 0 0 12px rgba(155,100,220,0.4); margin-bottom: 6px; }
 .livestats-lbl { font-family: var(--font-body); font-size: 14.5px; font-weight: 600; color: var(--w85); letter-spacing: 0.3px; }
+.livestats-src { font-family: var(--font-body); font-size: 13px; color: var(--w70); text-align: center; margin-top: 20px; }
 @media (max-width: 600px) {
   .livestats { padding: 30px 0 32px; }
   .livestats-eyebrow { font-size: 9px; letter-spacing: 1.2px; margin-bottom: 20px; padding: 0 8px; }
