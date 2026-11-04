@@ -8,29 +8,31 @@
 <meta name="description" content="An in-venue customer engagement system. Put a QR on your tables and customers play, promote you, and earn rewards they collect next visit. No app, no points card.">
 <link rel="canonical" href="https://giin.ai/">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#410061">
+<meta name="theme-color" content="#0A0918">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Giin">
-<meta property="og:title" content="Giin — Get more from every customer">
-<meta property="og:description" content="Customers complete simple tasks to earn rewards, giving them a reason to come back. You set the tasks and rewards — driving more revenue, more return visits, and a marketing list you own. For any venue, anywhere.">
+<meta property="og:title" content="Giin · Get more from every customer">
+<meta property="og:description" content="Customers complete simple tasks to earn rewards, giving them a reason to come back. You set the tasks and rewards, driving more revenue, more return visits, and a marketing list you own. For any venue, anywhere.">
 <meta property="og:url" content="https://giin.ai/">
-<meta property="og:image" content="https://giin.ai/assets/og-image.png">
+<meta property="og:image" content="https://giin.ai/assets/og-image.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Giin — Get more from every customer">
-<meta name="twitter:description" content="Customers complete simple tasks to earn rewards, giving them a reason to come back. You set the tasks and rewards — driving more revenue, more return visits, and a marketing list you own. For any venue, anywhere.">
-<meta name="twitter:image" content="https://giin.ai/assets/og-image.png">
+<meta name="twitter:title" content="Giin · Get more from every customer">
+<meta name="twitter:description" content="Customers complete simple tasks to earn rewards, giving them a reason to come back. You set the tasks and rewards, driving more revenue, more return visits, and a marketing list you own. For any venue, anywhere.">
+<meta name="twitter:image" content="https://giin.ai/assets/og-image.png?v=2">
 
 <!-- Favicons -->
-<link rel="icon" href="/assets/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" href="/assets/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png?v=2">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/assets/site.webmanifest?v=2">
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -58,19 +60,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=58">
+<link rel="stylesheet" href="styles.css?v=59">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body class="home">
 
 <nav>
-  <a href="#" class="logo">Giin</a>
+  <a href="#" class="logo" aria-label="Giin"><img src="/assets/giin-lockup.svg" alt="Giin" class="logo-img"></a>
   <div class="nav-actions">
     <a href="#demo-preview" class="nav-link nav-section">How it works</a>
     <a href="#benefits" class="nav-link nav-section">What you get</a>
     <a href="#control" class="nav-link nav-section">For your venue</a>
+    <a href="https://app.giin.ai/pricing" class="nav-link nav-section">Pricing</a>
     <a href="https://app.giin.ai/" class="nav-link">Sign in</a>
-    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-lime nav-cta">Book a call</a>
+    <a href="https://app.giin.ai/signup" class="btn btn-lime nav-cta">Get started</a>
   </div>
 </nav>
 
@@ -81,7 +84,8 @@
       <h1>Get more <span class="rot" aria-live="polite"><span class="rot-inner">revenue</span></span><br><span class="h1-nowrap">from every customer</span></h1>
       <p class="hero-sub">Customers use Giin to complete simple tasks at your venue and earn digital coupons that they can redeem on a future visit. You're in control: set customer tasks that benefit you today (like spending more or posting about your venue) and choose rewards that bring them back again later (like a discount or free item). You decide when each coupon can be redeemed, and Giin enforces these conditions automatically. <span class="em-ul">Get more from every customer, today and on a return visit.</span></p>
       <div class="hero-cta">
-        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-lime">Book a call</a>
+        <a href="https://app.giin.ai/signup" class="btn btn-lime">Get started</a>
+        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-ghost">Book a call</a>
       </div>
     </div>
 
@@ -147,7 +151,7 @@
 <!-- LIVE STATS BANNER -->
 <section class="livestats">
   <div class="wrap">
-    <div class="livestats-eyebrow">Live results from one venue &mdash; Seenspace, Bangkok &middot; Since June 3, 2026</div>
+    <div class="livestats-eyebrow">Live results from one venue &middot; Seenspace, Bangkok &middot; Since June 3, 2026</div>
     <div class="livestats-row">
       <div class="livestats-stat">
         <div class="livestats-num">430+</div>
@@ -196,7 +200,7 @@
             <div class="demo-point-icon"><i data-lucide="gift"></i></div>
             <div class="demo-point-body">
               <h3 class="demo-point-h">Real rewards, not points</h3>
-              <p class="demo-point-p">Customers earn things they actually want &mdash; a free item, a discount, premium treatment &mdash; not loyalty points that pile up and mean nothing.</p>
+              <p class="demo-point-p">Customers earn things they actually want, a free item, a discount, premium treatment, not loyalty points that pile up and mean nothing.</p>
             </div>
           </div>
         </div>
@@ -206,7 +210,7 @@
       <div class="phone">
         <div class="phone-notch"></div>
         <div class="screen">
-          <div class="screen-head"><div class="screen-logo">Giin</div><div class="screen-venue">The Corner Pub</div></div>
+          <div class="screen-head"><div class="screen-logo"><img src="/assets/giin-lockup.svg" alt="Giin" class="screen-logo-img"></div><div class="screen-venue">The Corner Pub</div></div>
           <div class="screen-step" style="position:relative;height:30px;">
             <span class="tag st st1">Step 1 &middot; Customer signs in to your venue</span>
             <span class="tag st st2">Step 2 &middot; They do a task set by you</span>
@@ -291,7 +295,7 @@
   <div class="wrap">
     <div class="sec-eyebrow">What you get</div>
     <h2 class="sec-title">More now. More later.</h2>
-    <p class="sec-sub">Every customer who walks in becomes worth more &mdash; on the visit they're already making, and on the additional visits generated by Giin.</p>
+    <p class="sec-sub">Every customer who walks in becomes worth more, on the visit they're already making, and on the additional visits generated by Giin.</p>
 
     <div class="ways-grid">
       <div class="way-col">
@@ -345,7 +349,7 @@
       <div class="band-icon"><i data-lucide="contact"></i></div>
       <div class="band-content">
         <h3 class="band-h">And you build something that's yours to keep.</h3>
-        <p class="band-p">Every customer signs in with their phone number, so you walk away with a marketing list of the people who actually visit &mdash; your most valuable customers, yours to retarget anytime. For most venues, it's the first time they can reach their best customers directly.</p>
+        <p class="band-p">Every customer signs in with their phone number, so you walk away with a marketing list of the people who actually visit, your most valuable customers, yours to retarget anytime. For most venues, it's the first time they can reach their best customers directly.</p>
       </div>
     </div>
   </div>
@@ -379,7 +383,7 @@
             <div class="ctrl-template-pill"><i data-lucide="sparkles"></i>Use a template</div>
           </div>
           <h3 class="ctrl-h">Any task, any reward</h3>
-          <p class="ctrl-p">Set whatever task you want &mdash; spend a minimum, post about your venue, try a featured item &mdash; and offer whatever reward fits: a discount, a free item, premium treatment. Or start fast with ready-made templates.</p>
+          <p class="ctrl-p">Set whatever task you want, spend a minimum, post about your venue, try a featured item, and offer whatever reward fits: a discount, a free item, premium treatment. Or start fast with ready-made templates.</p>
         </div>
 
         <!-- Point 2 -->
@@ -440,13 +444,13 @@
       <div class="ctrl-part-head ctrl-part-head-2"><i data-lucide="shield-check"></i><span>And Giin enforces it for you</span></div>
       <div class="enforce-grid">
         <div class="enforce-copy">
-          <p class="enforce-text">Once you set the rules, you never have to police them. If a coupon is only redeemable on weekdays, it simply won't open on a weekend. If it expires Friday, it's gone Saturday. Your staff don't have to check, remember, or argue &mdash; <span class="em-ul">the system holds the line, automatically, every time.</span></p>
+          <p class="enforce-text">Once you set the rules, you never have to police them. If a coupon is only redeemable on weekdays, it simply won't open on a weekend. If it expires Friday, it's gone Saturday. Your staff don't have to check, remember, or argue, <span class="em-ul">the system holds the line, automatically, every time.</span></p>
         </div>
         <div class="enforce-phone-stage">
           <div class="phone enforce-phone">
             <div class="phone-notch"></div>
             <div class="screen enforce-screen">
-              <div class="screen-head"><div class="screen-logo">Giin</div><div class="screen-venue">Your reward</div></div>
+              <div class="screen-head"><div class="screen-logo"><img src="/assets/giin-lockup.svg" alt="Giin" class="screen-logo-img"></div><div class="screen-venue">Your reward</div></div>
               <div class="enforce-body">
 
                 <!-- State 1: Earned, waiting -->
@@ -522,7 +526,7 @@
   <div class="wrap">
     <div class="sec-eyebrow">Built for your venue</div>
     <h2 class="sec-title">Built for venues with customers walking through the door.</h2>
-    <p class="sec-sub">If people visit you in person, Giin works &mdash; from bars to salons to hotels.</p>
+    <p class="sec-sub">If people visit you in person, Giin works, from bars to salons to hotels.</p>
     <div class="venue-chips">
       <span class="chip">&#127863; Bars</span>
       <span class="chip">&#127837; Restaurants</span>
@@ -547,7 +551,7 @@
       <div class="start-item">
         <div class="start-n">1</div>
         <h3 class="start-h">One quick meeting or call</h3>
-        <div class="start-p">We learn your venue and set up your first tasks and rewards together &mdash; and show your admin how to do it, so you can create and change tasks yourself anytime. About thirty minutes, start to finish.</div>
+        <div class="start-p">We learn your venue and set up your first tasks and rewards together, and show your admin how to do it, so you can create and change tasks yourself anytime. About thirty minutes, start to finish.</div>
       </div>
       <div class="start-item">
         <div class="start-n">2</div>
@@ -560,7 +564,7 @@
         <div class="start-p">Add your staff to your Giin team and they get the Giin staff scanner to validate tasks and redeem rewards during service. They sign in and use it right from their own phones. No shared device, no extra hardware.</div>
       </div>
     </div>
-    <p class="start-close">A short training video and a quick in-person session get your whole team comfortable &mdash; and you're never stuck, with a <span class="em-bold" style="color:var(--lime)">direct line to us for support</span> whenever you need it.</p>
+    <p class="start-close">A short training video and a quick in-person session get your whole team comfortable, and you're never stuck, with a <span class="em-bold" style="color:var(--lime)">direct line to us for support</span> whenever you need it.</p>
   </div>
 </section>
 
@@ -572,7 +576,8 @@
       <p>A quick call to see if Giin fits your venue. Setup takes an afternoon, so you could be live this week.</p>
 
       <div class="hero-cta" style="justify-content:center;">
-        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-lime">Book a call</a>
+        <a href="https://app.giin.ai/signup" class="btn btn-lime">Get started</a>
+        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-giin/30min?background_color=100420&amp;text_color=ffffff&amp;primary_color=c5ff4f'});return false;" class="btn btn-ghost">Book a call</a>
       </div>
     </div>
   </div>
@@ -581,10 +586,11 @@
 <footer>
   <div class="foot-grid">
     <div>
-      <div class="foot-logo">Giin</div>
+      <div class="foot-logo"><img src="/assets/giin-lockup.svg" alt="Giin" class="foot-logo-img"></div>
       <p class="foot-meta">For any venue, anywhere.<br>&copy; 2026 Giin &middot; Operated by Owens Enterprises LLC, a Wyoming limited liability company. 312 W. 2nd St., #2514, Casper, WY 82601, USA</p>
     </div>
     <div class="foot-links">
+      <a href="https://app.giin.ai/pricing">Pricing</a>
       <a href="https://app.giin.ai/privacy">Privacy</a>
       <a href="https://app.giin.ai/terms">Terms</a>
       <a href="mailto:hello@giin.ai">hello@giin.ai</a>
